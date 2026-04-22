@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa La La Aesthetics & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #faf7f2 0%, #f5f0e8 100%);
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c9a961;
+            text-decoration: none;
+        }
+        
+        .phone {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .hero {
+            padding: 80px 0 120px;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #6a6a6a;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #d4af37, #c9a961);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .sage-greeting {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .sage-greeting h2 {
+            font-size: 2rem;
+            color: #c9a961;
+            margin-bottom: 15px;
+        }
+        
+        .sage-greeting p {
+            color: #6a6a6a;
+            margin-bottom: 20px;
+        }
+        
+        .upload-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px dashed #c9a961;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        
+        .upload-btn {
+            background: #c9a961;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        
+        .lead-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #4a4a4a;
+        }
+        
+        .form-group input {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Playfair Display', serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #c9a961;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #d4af37, #c9a961);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #28a745;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .footer-content {
+            color: #6a6a6a;
+        }
+        
+        .footer-content h3 {
+            color: #c9a961;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .phone {
+                font-size: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1.2rem;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Spa La La Aesthetics & Wellness</a>
+                <a href="tel:512-953-3540" class="phone">(512) 953-3540</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Meet Sage, Your Personal Aesthetic Consultant</h1>
+                    <p>Experience personalized beauty treatments tailored just for you. Let Sage guide you through your aesthetic journey with expert care and luxury service.</p>
+                    <button class="cta-button" onclick="openModal()">Meet Sage →</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <div class="sage-greeting">
+                <h2>Hello! I'm Sage</h2>
+                <p>I'm here to help you achieve your aesthetic goals with personalized treatments designed just for you.</p>
+            </div>
+
+            <div class="upload-section">
+                <p>Optional: Upload a photo to help me understand your goals better</p>
+                <input type="file" id="photoUpload" accept="image/*" style="display:none">
+                <button class="upload-btn" onclick="document.getElementById('photoUpload').click()">Upload Photo</button>
+            </div>
+
+            <form class="lead-form" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Get My Personal Consultation</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <p>Thank you! Sage will be in touch with you soon to schedule your personalized consultation.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Spa La La Aesthetics & Wellness, LLC.</h3>
+                <p>Austin, Texas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        async function submitForm(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('firstName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value
+            };
+
+            const payload = {
+                type: "lead_captured",
+                business: "Spa La La Aesthetics & Wellness, LLC.",
+                data: formData
+            };
+
+            try {
+                const response = await fetch('https://lumiere-sender.lumiere-sender.workers.dev/page-event', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                document.querySelector('.lead-form').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your information. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
