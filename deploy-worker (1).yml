@@ -1,0 +1,35 @@
+name: Deploy Lumière Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'workers/worker-demo-mode.js'
+      - 'workers/worker-v6.js'
+
+jobs:
+  deploy-demo:
+    name: Deploy lumiere-demo worker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy worker-demo-mode to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy workers/worker-demo-mode.js --name lumiere-demo --compatibility-date 2024-01-01
+
+  deploy-live:
+    name: Deploy lumiere-sender worker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy worker-v6 to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy workers/worker-v6.js --name lumiere-sender --compatibility-date 2024-01-01
