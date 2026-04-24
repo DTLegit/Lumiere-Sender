@@ -1,295 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Amore Laser</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5;--nav:#fff}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amore Laser - Premier Med Spa & Aesthetic Treatments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header{background:var(--nav);padding:0 48px;height:74px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{height:44px;object-fit:contain}
-.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
-.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
-.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
-.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px;letter-spacing:0.3px}
-.hdr-cta:hover{background:#333!important}
+        :root {
+            --primary: #1a2744;
+            --secondary: #d4af8c;
+            --accent: #f7e7d3;
+            --text-dark: #2c2c2c;
+            --text-light: #666666;
+            --white: #ffffff;
+            --background: #fefdfb;
+        }
 
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
-.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
-.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
-h1 em{font-style:italic;color:var(--accent)}
-.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
-.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-.btn{padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
-.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px);opacity:0.9}
-.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
-.trust{display:flex;gap:20px;flex-wrap:wrap}
-.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
-.trust span::before{content:'— ';color:var(--accent);opacity:1}
-.hero-r{position:relative;overflow:hidden}
-.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,248,245,0.3),transparent)}
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
 
-.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
-.stat-item{text-align:center}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
-.stat-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
 
-.section{padding:100px 48px}
-.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
-h2 em{font-style:italic;color:var(--accent)}
-.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.sage-inner{max-width:960px;margin:0 auto}
-.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
-.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(26, 39, 68, 0.1);
+        }
 
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
-.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
-.svc-body{padding:22px}
-.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
-.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
-.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
-.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
-.svc-link::after{content:' →'}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.rev-section{background:var(--dark);color:#fff}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
-.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
-.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
-.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;max-width:900px}
-.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
-.team-photo-wrap{background:#f5f2ee;display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden}
-.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
-.team-body{padding:24px}
-.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
-.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
-.cta-section h2{color:#fff;margin-bottom:12px}
-.cta-section p{opacity:0.85;margin-bottom:36px;font-size:1rem}
-.btn-light{background:#fff;color:var(--text);font-weight:600}
-.btn-light:hover{background:#f5f5f5}
-.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
-.btn-ghost:hover{background:rgba(255,255,255,0.15)}
+        .phone {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
 
-footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
-.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
-.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
-.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
-.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
 
-@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
-@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
-</style>
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #0f1a2e;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: #c19b6e;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, #f0f0f0 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero-text h1 .italic {
+            font-style: italic;
+            color: var(--secondary);
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            opacity: 0.7;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(26, 39, 68, 0.1);
+        }
+
+        /* Sage AI Section */
+        .sage-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .sage-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sage-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .sage-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .feature-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .chip {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sage-embed {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--background);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .review-card {
+            background: var(--background);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .reviewer {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--primary);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0 30px;
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .trust-badges {
+                justify-content: center;
+            }
+
+            .header-actions {
+                gap: 15px;
+            }
+
+            .phone {
+                font-size: 14px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .feature-chips {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo serif">Amore Laser</a>
+                <div class="header-actions">
+                    <a href="tel:(512) 291-4247" class="phone">(512) 291-4247</a>
+                    <a href="#sage" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <div class="brand">
-    
-    <span class="brand-name">Amore Laser</span>
-  </div>
-  <div class="hdr-r">
-    <a href="tel:5122914247">(512) 291-4247</a>
-    <a href="#sage">Meet Sage</a>
-    <a href="tel:5122914247" target="_blank" class="hdr-cta">Book Now</a>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="serif">Reveal Your <span class="italic">Natural Beauty</span> with Expert Care</h1>
+                    <p>Experience premium aesthetic treatments at Amore Laser, where advanced technology meets personalized care for stunning, natural-looking results.</p>
+                    <div class="hero-actions">
+                        <a href="#sage" class="btn btn-primary">Start Your Journey</a>
+                        <a href="#services" class="btn btn-secondary">View Services</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <span>✓</span>
+                            <span>Expert Providers</span>
+                        </div>
+                        <div class="badge">
+                            <span>✓</span>
+                            <span>Premium Results</span>
+                        </div>
+                        <div class="badge">
+                            <span>✓</span>
+                            <span>Personalized Care</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Med Spa Treatment Room">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-l">
-    <div class="eyebrow">Premier Med Spa · Aesthetic Excellence</div>
-    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
-    <p class="hero-sub">Expert aesthetic treatments personalized to you. Natural-looking results.</p>
-    <div class="btns">
-      <a href="tel:5122914247" target="_blank" class="btn btn-p">Book Consultation</a>
-      <a href="#sage" class="btn btn-o">Chat with Sage →</a>
-    </div>
-    <div class="trust">
-      <span>Board Certified</span>
-      <span>Natural Results</span>
-      <span>Free Consults</span>
-      <span>(512) 291-4247</span>
-    </div>
-  </div>
-  <div class="hero-r">
-    <img class="hero-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&auto=format" alt="Amore Laser" onerror="this.style.background='#f0e8d8'">
-    <div class="hero-overlay"></div>
-  </div>
-</section>
+    <!-- Sage AI Section -->
+    <section id="sage" class="sage-section">
+        <div class="container">
+            <div class="sage-header">
+                <h2 class="serif">Meet Sage - Your Personal Beauty Consultant</h2>
+                <p>Get instant answers about treatments, pricing, and scheduling. Our AI consultant is here 24/7 to help you discover the perfect aesthetic solutions.</p>
+                <div class="feature-chips">
+                    <span class="chip">Treatment Recommendations</span>
+                    <span class="chip">Instant Scheduling</span>
+                    <span class="chip">Pricing Information</span>
+                    <span class="chip">Consultation Booking</span>
+                    <span class="chip">Aftercare Guidance</span>
+                </div>
+            </div>
+            <div class="sage-embed">
+                <iframe src="https://paymegpt.com/agents/253/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+            </div>
+        </div>
+    </section>
 
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
-  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
-  <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Client Rated</div></div>
-  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
-</div>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">Our Signature Treatments</h2>
+                <p>Discover our comprehensive range of advanced aesthetic treatments, each designed to enhance your natural beauty with precision and care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Botox Treatment">
+                    <div class="service-card-content">
+                        <h3 class="serif">Botox</h3>
+                        <p>Smooth fine lines and wrinkles with precise Botox treatments administered by our expert providers for natural-looking results.</p>
+                        <a href="#sage" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dermal Fillers">
+                    <div class="service-card-content">
+                        <h3 class="serif">Fillers</h3>
+                        <p>Restore volume and enhance facial contours with premium dermal fillers for a refreshed, youthful appearance.</p>
+                        <a href="#sage" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Laser Treatment">
+                    <div class="service-card-content">
+                        <h3 class="serif">Laser</h3>
+                        <p>Advanced laser treatments for skin rejuvenation, hair removal, and various aesthetic concerns with cutting-edge technology.</p>
+                        <a href="#sage" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Microneedling Treatment">
+                    <div class="service-card-content">
+                        <h3 class="serif">Microneedling</h3>
+                        <p>Stimulate collagen production and improve skin texture with professional microneedling treatments for radiant skin.</p>
+                        <a href="#sage" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="IV Therapy">
+                    <div class="service-card-content">
+                        <h3 class="serif">IV Therapy</h3>
+                        <p>Boost your wellness from within with customized IV vitamin therapy treatments for enhanced energy and vitality.</p>
+                        <a href="#sage" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Consultation">
+                    <div class="service-card-content">
+                        <h3 class="serif">Consultation</h3>
+                        <p>Begin your aesthetic journey with a personalized consultation to create the perfect treatment plan for your goals.</p>
+                        <a href="#sage" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="sage" style="background:var(--bg)">
-  <div class="sage-inner">
-    <div class="sec-label">Available 24/7</div>
-    <h2>Meet Sage —<br><em>Your Aesthetic Guide</em></h2>
-    <p class="sec-sub">Not sure which treatment is right for you? Sage knows every service, every price, and every option at Amore Laser. Upload a photo for personalized talking points before your consultation — no pressure, just helpful.</p>
-    <div class="feats">
-      <div class="feat">📸 Photo Analysis</div>
-      <div class="feat">💬 Treatment Guidance</div>
-      <div class="feat">📅 Book Consultation</div>
-      <div class="feat">💊 Ask About Pricing</div>
-      <div class="feat">🌙 Always Available</div>
-    </div>
-    <div class="chat-wrap">
-      <iframe src="https://paymegpt.com/agents/242/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
-    </div>
-  </div>
-</section>
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">What Our Clients Say</h2>
+                <p>Real experiences from clients who have transformed their confidence at Amore Laser</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The team at Amore Laser is absolutely incredible. My Botox results look so natural and I feel more confident than ever. The consultation process was thorough and they really listened to what I wanted to achieve."</p>
+                    <p class="reviewer">- Sarah M.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I've been getting laser treatments here for months and the results are amazing. The staff is professional, the facility is spotless, and they always make me feel comfortable throughout the entire process."</p>
+                    <p class="reviewer">- Jennifer L.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"From my first IV therapy session to my recent filler treatment, Amore Laser has exceeded my expectations every time. They truly care about delivering the best possible results for each client."</p>
+                    <p class="reviewer">- Michelle K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section services-sec" style="background:#fff">
-  <div class="sec-label">Treatments</div>
-  <h2>Our <em>Services</em></h2>
-  <div class="svc-grid">
-    
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&auto=format" alt="Botox & Dysport" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Botox & Dysport</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&auto=format" alt="Dermal Fillers" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Dermal Fillers</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format" alt="Microneedling" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Microneedling</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1570654639102-bdd95efeca7a?w=600&h=400&fit=crop&auto=format" alt="Chemical Peels" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Chemical Peels</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop&auto=format" alt="Laser Treatments" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Laser Treatments</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop&auto=format" alt="IV Therapy" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">IV Therapy</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="serif">Ready to Begin Your Transformation?</h2>
+            <p>Schedule your personalized consultation today and discover how we can help you achieve your aesthetic goals with confidence and care.</p>
+            <a href="#sage" class="btn btn-secondary">Book Your Consultation</a>
+        </div>
+    </section>
 
-<section class="section rev-section">
-  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
-  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
-  <div class="rev-grid">
-    
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">"I’ve been going to Amore Laser regularly for my laser hair removal treatments, and I’ve consistently had a great experience. The appointments are quick and efficient, the staff is always kind and professional, and they make the whole process feel comfortable and easy.
-
-Their pric"</div>
-      <div class="rev-author">Eileen Shihadeh · Google</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">"Shari and her team make me feel right at home every time I come here. I come here for laser and the treatments have been very effective. 10/10 I will forever recommend Amore Laser"</div>
-      <div class="rev-author">Anisah Brown · Google</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">"Going into Amore for laser treatments has become one of my favorite treats for myself. Clean! Professional! Friendly! Great vibes! Superb results! The owner, Shari, is a darling person and I love chatting with her. Her technicians are also top notch. Can't beat the price."</div>
-      <div class="rev-author">Professor Beamz ACC · Google</div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-section">
-  <h2>Ready to Look Your Best?</h2>
-  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
-  <div class="btns" style="justify-content:center">
-    <a href="#sage" class="btn btn-light">Talk to Sage</a>
-    <a href="tel:5122914247" class="btn btn-ghost">Call (512) 291-4247</a>
-    <a href="tel:5122914247" target="_blank" class="btn btn-ghost">Book Now</a>
-  </div>
-</section>
-
-<footer>
-  <div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(255,255,255,0.6);margin-bottom:16px">Amore Laser</div>
-    <p class="ft-tagline">Personalized aesthetic treatments delivered by licensed professionals. Natural-looking results, expert care.</p>
-    <div class="ft-contact">
-      
-      
-      <a href="tel:5122914247">(512) 291-4247</a><br>
-      <a href="mailto:amorelaser@yahoo.com">amorelaser@yahoo.com</a><br>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Treatments</div>
-    <div class="ft-links">
-      <a href="#sage">Botox & Dysport</a><a href="#sage">Dermal Fillers</a><a href="#sage">Microneedling</a><a href="#sage">Chemical Peels</a><a href="#sage">Laser Treatments</a><a href="#sage">IV Therapy</a>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Connect</div>
-    <div class="ft-contact">
-      
-      
-      
-    </div>
-  </div>
-</footer>
-<div class="ft-bot">
-  <span>© Amore Laser</span>
-  <span>Powered by Lumière Systems</span>
-</div>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="serif">Contact Info</h3>
+                    <a href="tel:(512) 291-4247">(512) 291-4247</a>
+                    <a href="mailto:amorelaser@yahoo.com">amorelaser@yahoo.com</a>
+                </div>
+                <div class="footer-section">
+                    <h3 class="serif">Services</h3>
+                    <p>Botox & Fillers</p>
+                    <p>Laser Treatments</p>
+                    <p>Microneedling</p>
+                    <p>IV Therapy</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="serif">Hours</h3>
+                    <p>Monday - Friday: 9AM - 6PM</p>
+                    <p>Saturday: 9AM - 4PM</p>
+                    <p>Sunday: By Appointment</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amore Laser. All rights reserved. | Powered by Lumière Systems</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
