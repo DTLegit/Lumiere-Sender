@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afterglow Medical Spa - Austin's Premier Digital Music & Wellness Experience</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Afterglow Medical Spa - Austin's Premier Digital Music Publication & Wellness Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,22 +14,18 @@
 
         :root {
             --primary: #1a2744;
-            --accent: #c8a882;
-            --light: #f5f2ee;
-            --text: #2c2c2c;
-            --text-light: #6b6b6b;
+            --accent: #e8d5b7;
+            --gold: #c9a96e;
+            --cream: #f5f2ee;
+            --text-dark: #2c3e50;
+            --text-light: #666;
             --white: #ffffff;
         }
 
         body {
             font-family: 'Jost', sans-serif;
             line-height: 1.6;
-            color: var(--text);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
+            color: var(--text-dark);
         }
 
         .container {
@@ -41,16 +35,15 @@
         }
 
         /* Header */
-        .header {
+        header {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(26, 39, 68, 0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
         .header-content {
@@ -60,64 +53,45 @@
         }
 
         .logo img {
-            height: 45px;
+            height: 40px;
             width: auto;
         }
 
-        .header-actions {
+        .header-right {
             display: flex;
             align-items: center;
             gap: 25px;
         }
 
-        .phone-link {
+        .phone {
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             font-size: 16px;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            padding: 12px 28px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 500;
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary), #2c3e50);
+            color: white;
+            padding: 12px 24px;
             text-decoration: none;
-            display: inline-block;
+            border-radius: 30px;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        .btn-primary:hover {
-            background: var(--accent);
+        .cta-btn:hover {
             transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
+            box-shadow: 0 8px 25px rgba(26, 39, 68, 0.3);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--light) 0%, #ffffff 100%);
-            padding: 120px 0 80px;
-            min-height: 100vh;
+            margin-top: 80px;
+            min-height: 90vh;
             display: flex;
             align-items: center;
+            background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
         }
 
         .hero-content {
@@ -128,22 +102,24 @@
         }
 
         .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 3.5rem;
+            font-weight: 600;
             line-height: 1.2;
             color: var(--primary);
             margin-bottom: 20px;
         }
 
-        .hero-text h1 em {
-            color: var(--accent);
+        .hero-text h1 .italic {
             font-style: italic;
+            color: var(--gold);
         }
 
         .hero-text p {
             font-size: 1.2rem;
             color: var(--text-light);
             margin-bottom: 30px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .hero-ctas {
@@ -152,30 +128,32 @@
             margin-bottom: 40px;
         }
 
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
         .trust-badges {
             display: flex;
             gap: 30px;
             align-items: center;
         }
 
-        .trust-badge {
+        .badge {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: var(--text-light);
             font-size: 14px;
         }
 
-        .hero-image {
-            position: relative;
-        }
-
         .hero-image img {
             width: 100%;
-            height: 500px;
-            object-fit: cover;
+            height: 400px;
+            object-fit: contain;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(26, 39, 68, 0.1);
+            background: var(--cream);
         }
 
         /* Sage AI Section */
@@ -184,59 +162,54 @@
             background: var(--white);
         }
 
-        .sage-content {
+        .section-header {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            margin-bottom: 50px;
         }
 
-        .sage-content h2 {
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .sage-content p {
+        .section-header p {
             font-size: 1.1rem;
             color: var(--text-light);
-            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .feature-chips {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
             margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
         .chip {
-            background: var(--light);
-            color: var(--primary);
-            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary), #2c3e50);
+            color: white;
+            padding: 10px 20px;
             border-radius: 25px;
             font-size: 14px;
             font-weight: 500;
         }
 
         .sage-embed {
-            margin-top: 30px;
-            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         /* Services Section */
         .services {
             padding: 80px 0;
-            background: var(--light);
-        }
-
-        .services h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 60px;
+            background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
         }
 
         .services-grid {
@@ -246,34 +219,40 @@
         }
 
         .service-card {
-            background: var(--white);
-            border-radius: 15px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(26, 39, 68, 0.08);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
-        .service-card img {
-            width: 100%;
+        .service-image {
             height: 200px;
-            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
         }
 
-        .service-card-content {
+        .service-content {
             padding: 25px;
         }
 
-        .service-card h3 {
+        .service-content h3 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .service-card p {
+        .service-content p {
             color: var(--text-light);
             line-height: 1.6;
         }
@@ -281,14 +260,13 @@
         /* Reviews Section */
         .reviews {
             padding: 80px 0;
-            background: var(--white);
+            background: var(--primary);
+            color: white;
         }
 
-        .reviews h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 60px;
+        .reviews .section-header h2,
+        .reviews .section-header p {
+            color: white;
         }
 
         .reviews-grid {
@@ -298,14 +276,14 @@
         }
 
         .review-card {
-            background: var(--light);
+            background: rgba(255,255,255,0.1);
             padding: 30px;
-            border-radius: 15px;
-            position: relative;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .stars {
-            color: #ffd700;
+            color: var(--gold);
             font-size: 1.2rem;
             margin-bottom: 15px;
         }
@@ -313,24 +291,64 @@
         .review-text {
             font-style: italic;
             margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .reviewer-name {
+        .reviewer {
             font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .team-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
+            background: var(--cream);
+            border-radius: 20px;
+        }
+
+        .team-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
             color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .team-info .title {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            color: var(--text-light);
+            line-height: 1.7;
         }
 
         /* CTA Section */
         .cta-section {
-            background: var(--primary);
-            color: var(--white);
             padding: 80px 0;
+            background: linear-gradient(135deg, var(--gold), var(--primary));
             text-align: center;
+            color: white;
         }
 
         .cta-section h2 {
-            font-size: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
@@ -340,51 +358,41 @@
             opacity: 0.9;
         }
 
-        .btn-white {
-            background: var(--white);
+        .cta-white {
+            background: white;
             color: var(--primary);
-            padding: 15px 35px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .btn-white:hover {
-            background: var(--accent);
-            color: var(--white);
-            transform: translateY(-2px);
         }
 
         /* Footer */
-        .footer {
+        footer {
             background: var(--primary);
-            color: var(--white);
-            padding: 60px 0 30px;
+            color: white;
+            padding: 50px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 30px;
         }
 
         .footer-section h3 {
-            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
 
-        .footer-section p, .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             margin-bottom: 10px;
+            display: block;
         }
 
         .footer-section a:hover {
-            color: var(--white);
+            color: white;
         }
 
         .social-links {
@@ -393,42 +401,30 @@
         }
 
         .social-links a {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 50%;
             display: inline-block;
-            transition: background 0.3s ease;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            background: var(--accent);
+            background: var(--gold);
+            transform: translateY(-2px);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 20px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.6);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
         }
 
-        /* Mobile Responsive */
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .header-actions {
-                gap: 15px;
-            }
-
-            .phone-link {
-                font-size: 14px;
-            }
-
-            .btn-primary {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
                 text-align: center;
             }
 
@@ -437,41 +433,45 @@
             }
 
             .hero-ctas {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .trust-badges {
-                justify-content: center;
-                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .feature-chips {
-                gap: 10px;
+            .team-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .chip {
-                font-size: 12px;
-                padding: 6px 15px;
+            .header-right .phone {
+                display: none;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="http://static1.squarespace.com/static/5b788d28697a98e17a6d4c7a/t/5b7e3d42c2241ba148fb851e/1534999879814/afterglow_logoFINAL-02.png?format=1500w" alt="Afterglow Medical Spa">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5b788d28697a98e17a6d4c7a/1535230588084-Z21SLNXWNKBV6PURWMDV/Untitled-5.png" alt="Afterglow Medical Spa">
                 </div>
-                <div class="header-actions">
-                    <a href="tel:(512) 419-7546" class="phone-link">(512) 419-7546</a>
-                    <a href="#sage" class="btn-primary">Book Now</a>
+                <div class="header-right">
+                    <a href="tel:+15124197546" class="phone">(512) 419-7546</a>
+                    <a href="#sage" class="cta-btn">Book Now</a>
                 </div>
             </div>
         </div>
@@ -482,29 +482,26 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Your <em>Afterglow</em> Awaits</h1>
-                    <p>Experience Austin's premier digital music wellness spa, where innovative treatments meet creative expression. Discover a new level of rejuvenation through our unique blend of media, music, and modern wellness.</p>
+                    <h1>Experience the <span class="italic">Afterglow</span> of Digital Wellness</h1>
+                    <p>Where music meets wellness in Austin's most innovative digital publication and lifestyle experience. Created by and for University of Texas students.</p>
                     <div class="hero-ctas">
-                        <a href="#sage" class="btn-primary">Get Started Today</a>
-                        <a href="#services" class="btn-secondary">Explore Services</a>
+                        <a href="#sage" class="cta-btn">Explore Services</a>
+                        <a href="#team" class="cta-btn cta-secondary">Learn More</a>
                     </div>
                     <div class="trust-badges">
-                        <div class="trust-badge">
-                            <span>⭐</span>
-                            <span>Austin Based</span>
+                        <div class="badge">
+                            <span>✓</span> University of Texas Austin
                         </div>
-                        <div class="trust-badge">
-                            <span>🎵</span>
-                            <span>Music Focused</span>
+                        <div class="badge">
+                            <span>✓</span> Student-Created
                         </div>
-                        <div class="trust-badge">
-                            <span>🎓</span>
-                            <span>Student Created</span>
+                        <div class="badge">
+                            <span>✓</span> Digital Innovation
                         </div>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Music and wellness experience">
+                    <img src="http://static1.squarespace.com/static/5b788d28697a98e17a6d4c7a/t/5b7e3d42c2241ba148fb851e/1534999879814/afterglow_logoFINAL-02.png?format=1500w" alt="Afterglow Experience">
                 </div>
             </div>
         </div>
@@ -513,75 +510,70 @@
     <!-- Sage AI Section -->
     <section id="sage" class="sage-section">
         <div class="container">
-            <div class="sage-content">
-                <h2>Meet Sage, Your Personal <em>Wellness</em> Assistant</h2>
-                <p>Get instant answers about our services, book appointments, and discover the perfect treatment plan tailored just for you.</p>
-                
-                <div class="feature-chips">
-                    <span class="chip">24/7 Support</span>
-                    <span class="chip">Instant Booking</span>
-                    <span class="chip">Personalized Recommendations</span>
-                    <span class="chip">Treatment Planning</span>
-                    <span class="chip">Music Integration</span>
-                </div>
-                
-                <div class="sage-embed">
-                    <iframe src="https://paymegpt.com/agents/281/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-                </div>
+            <div class="section-header">
+                <h2>Your AI-Powered Experience Assistant</h2>
+                <p>Get instant answers, book services, and discover your perfect Afterglow experience with our intelligent chat assistant.</p>
+            </div>
+            <div class="feature-chips">
+                <span class="chip">Instant Booking</span>
+                <span class="chip">Service Recommendations</span>
+                <span class="chip">Real-time Availability</span>
+                <span class="chip">24/7 Support</span>
+            </div>
+            <div class="sage-embed">
+                <iframe src="https://paymegpt.com/agents/310/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services">
         <div class="container">
-            <h2>Our Signature <em>Services</em></h2>
+            <div class="section-header">
+                <h2>Our Digital Wellness Services</h2>
+                <p>Discover our comprehensive range of digital publication and media services designed for the modern Austin lifestyle.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Articles">
-                    <div class="service-card-content">
+                    <div class="service-image">📰</div>
+                    <div class="service-content">
                         <h3>Articles</h3>
-                        <p>Dive deep into music culture and wellness through our expertly crafted articles that blend artistic expression with therapeutic insights.</p>
+                        <p>In-depth digital articles covering music, culture, and wellness topics that matter to the UT Austin community and beyond.</p>
                     </div>
                 </div>
-                
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Media">
-                    <div class="service-card-content">
+                    <div class="service-image">📱</div>
+                    <div class="service-content">
                         <h3>Media</h3>
-                        <p>Immerse yourself in curated multimedia experiences that promote relaxation, creativity, and personal transformation.</p>
+                        <p>Cutting-edge digital media content including podcasts, video interviews, and multimedia storytelling experiences.</p>
                     </div>
                 </div>
-                
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Print">
-                    <div class="service-card-content">
+                    <div class="service-image">🖨️</div>
+                    <div class="service-content">
                         <h3>Print</h3>
-                        <p>Take home beautifully designed print materials that continue your wellness journey beyond our spa walls.</p>
+                        <p>Premium print publications and special editions showcasing the best of Austin's music and cultural scene.</p>
                     </div>
                 </div>
-                
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Apply">
-                    <div class="service-card-content">
+                    <div class="service-image">📝</div>
+                    <div class="service-content">
                         <h3>Apply</h3>
-                        <p>Join our creative community and become part of the Afterglow experience through our collaborative application process.</p>
+                        <p>Join our team of talented writers, photographers, and content creators. Apply to be part of the Afterglow experience.</p>
                     </div>
                 </div>
-                
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Subscribe">
-                    <div class="service-card-content">
+                    <div class="service-image">📧</div>
+                    <div class="service-content">
                         <h3>Subscribe</h3>
-                        <p>Stay connected with exclusive content, early access to events, and personalized wellness recommendations delivered to you.</p>
+                        <p>Stay connected with our newsletter and exclusive content. Get the latest updates on music, culture, and events.</p>
                     </div>
                 </div>
-                
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Concert Coverage">
-                    <div class="service-card-content">
+                    <div class="service-image">🎵</div>
+                    <div class="service-content">
                         <h3>Concert Coverage</h3>
-                        <p>Experience live music through our unique lens, combining entertainment coverage with wellness perspectives and therapeutic insights.</p>
+                        <p>Exclusive concert reviews, artist interviews, and behind-the-scenes coverage of Austin's vibrant music scene.</p>
                     </div>
                 </div>
             </div>
@@ -591,24 +583,46 @@
     <!-- Reviews Section -->
     <section class="reviews">
         <div class="container">
-            <h2>What Our <em>Community</em> Says</h2>
+            <div class="section-header">
+                <h2>What Our Community Says</h2>
+                <p>Hear from students, artists, and readers who've experienced the Afterglow difference.</p>
+            </div>
             <div class="reviews-grid">
                 <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"Afterglow has completely changed how I think about wellness and music. The unique approach they take to combining creative expression with self-care is exactly what Austin needed. I feel more centered and inspired after every visit."</p>
-                    <p class="reviewer-name">- Sarah M., UT Student</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"Afterglow has completely changed how I discover music in Austin. Their concert coverage is unmatched and the digital platform is so easy to navigate. Love supporting student journalism!"</div>
+                    <div class="reviewer">- Sarah M., UT Austin Student</div>
                 </div>
-                
                 <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"As a music lover, I was skeptical about a 'music spa' concept, but Afterglow exceeded all expectations. Their articles are insightful, the media experiences are transformative, and the whole vibe is incredibly healing."</p>
-                    <p class="reviewer-name">- Marcus R., Local Musician</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"As a local musician, getting featured in Afterglow was incredible. Their team really understands the Austin music scene and their articles are always so well-written and engaging."</div>
+                    <div class="reviewer">- Marcus T., Austin Musician</div>
                 </div>
-                
                 <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"The team at Afterglow really understands the connection between music, creativity, and wellness. Their concert coverage gives me a new perspective on live music, and their subscription service keeps me inspired all month long."</p>
-                    <p class="reviewer-name">- Emma K., Creative Professional</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"The subscription service is worth every penny. I get insider access to the best shows and events in Austin. Afterglow keeps me connected to what's happening in the city."</div>
+                    <div class="reviewer">- Jessica L., Austin Resident</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Creative Team</h2>
+                <p>Passionate students and professionals dedicated to showcasing Austin's vibrant cultural landscape.</p>
+            </div>
+            <div class="team-content">
+                <div class="team-image">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5b788d28697a98e17a6d4c7a/1776448363053-W1YB1BSGPWK9HBXJGIKA/image-asset.jpeg" alt="Afterglow Team">
+                </div>
+                <div class="team-info">
+                    <h3>The Afterglow Editorial Team</h3>
+                    <p class="title">Student Journalists & Creative Professionals</p>
+                    <p>Our diverse team of University of Texas students brings fresh perspectives to Austin's music and cultural scene. With backgrounds in journalism, photography, music, and digital media, we're passionate about creating content that resonates with our community.</p>
+                    <p>We believe in the power of student voice and the importance of documenting the incredible artistic energy that flows through Austin. From intimate venue reviews to major festival coverage, our team is committed to delivering authentic, engaging content.</p>
                 </div>
             </div>
         </div>
@@ -617,37 +631,42 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Experience Your <em>Afterglow</em>?</h2>
-            <p>Join Austin's most innovative wellness community where music meets mindfulness.</p>
-            <a href="#sage" class="btn-white">Start Your Journey Today</a>
+            <h2>Ready to Experience the Afterglow?</h2>
+            <p>Join our community and discover Austin's music scene like never before.</p>
+            <a href="#sage" class="cta-btn cta-white">Start Your Journey</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>Phone: <a href="tel:(512) 419-7546">(512) 419-7546</a></p>
-                    <p>Email: <a href="mailto:afterglowatx@gmail.com">afterglowatx@gmail.com</a></p>
+                    <p>2 Standard</p>
+                    <a href="tel:+15124197546">(512) 419-7546</a>
+                    <a href="mailto:afterglowatx@gmail.com">afterglowatx@gmail.com</a>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <h3>Services</h3>
+                    <a href="#services">Articles</a>
+                    <a href="#services">Media Production</a>
+                    <a href="#services">Concert Coverage</a>
+                    <a href="#services">Print Publications</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
                     <div class="social-links">
                         <a href="http://instagram.com/afterglowatx" target="_blank">📷</a>
                     </div>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>About Afterglow</h3>
-                    <p>A digital music publication and wellness spa created by and for students at The University of Texas at Austin, blending creative expression with therapeutic experiences.</p>
+                    <h3>About</h3>
+                    <p>Digital music publication created by and for students at The University of Texas at Austin.</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 Afterglow Medical Spa. All rights reserved. | Powered by Lumière Systems</p>
+                <p>&copy; 2024 Afterglow Medical Spa. All rights reserved. | Powered by Lumière Systems</p>
             </div>
         </div>
     </footer>
