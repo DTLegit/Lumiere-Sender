@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Aqua Luna Aesthetics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5;--nav:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+
+header{background:var(--nav);padding:0 48px;height:74px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{height:44px;object-fit:contain}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
+.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
+.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
+.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px;letter-spacing:0.3px}
+.hdr-cta:hover{background:#333!important}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.btn{padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
+.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px);opacity:0.9}
+.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+.trust{display:flex;gap:20px;flex-wrap:wrap}
+.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
+.trust span::before{content:'— ';color:var(--accent);opacity:1}
+.hero-r{position:relative;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,248,245,0.3),transparent)}
+
+.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
+.stat-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+
+.section{padding:100px 48px}
+.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
+h2 em{font-style:italic;color:var(--accent)}
+.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+
+.sage-inner{max-width:960px;margin:0 auto}
+.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
+.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
+.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
+.svc-body{padding:22px}
+.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
+.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
+.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
+.svc-link::after{content:' →'}
+
+.rev-section{background:var(--dark);color:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
+.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
+.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;max-width:900px}
+.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
+.team-photo-wrap{background:#f5f2ee;display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden}
+.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
+.team-body{padding:24px}
+.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
+.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+
+.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
+.cta-section h2{color:#fff;margin-bottom:12px}
+.cta-section p{opacity:0.85;margin-bottom:36px;font-size:1rem}
+.btn-light{background:#fff;color:var(--text);font-weight:600}
+.btn-light:hover{background:#f5f5f5}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
+.btn-ghost:hover{background:rgba(255,255,255,0.15)}
+
+footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
+.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
+.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
+.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    
+    <span class="brand-name">Aqua Luna Aesthetics</span>
+  </div>
+  <div class="hdr-r">
+    <a href="tel:5125181876">(512) 518-1876</a>
+    <a href="#sage">Meet Sage</a>
+    <a href="tel:5125181876" target="_blank" class="hdr-cta">Book Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-l">
+    <div class="eyebrow">Premier Med Spa · Aesthetic Excellence</div>
+    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
+    <p class="hero-sub">Expert aesthetic treatments personalized to you. Natural-looking results.</p>
+    <div class="btns">
+      <a href="tel:5125181876" target="_blank" class="btn btn-p">Book Consultation</a>
+      <a href="#sage" class="btn btn-o">Chat with Sage →</a>
+    </div>
+    <div class="trust">
+      <span>Board Certified</span>
+      <span>Natural Results</span>
+      <span>Free Consults</span>
+      <span>(512) 518-1876</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&auto=format" alt="Aqua Luna Aesthetics" onerror="this.style.background='#f0e8d8'">
+    <div class="hero-overlay"></div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
+  <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Client Rated</div></div>
+  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
+</div>
+
+<section class="section" id="sage" style="background:var(--bg)">
+  <div class="sage-inner">
+    <div class="sec-label">Available 24/7</div>
+    <h2>Meet Sage —<br><em>Your Aesthetic Guide</em></h2>
+    <p class="sec-sub">Not sure which treatment is right for you? Sage knows every service, every price, and every option at Aqua Luna Aesthetics. Upload a photo for personalized talking points before your consultation — no pressure, just helpful.</p>
+    <div class="feats">
+      <div class="feat">📸 Photo Analysis</div>
+      <div class="feat">💬 Treatment Guidance</div>
+      <div class="feat">📅 Book Consultation</div>
+      <div class="feat">💊 Ask About Pricing</div>
+      <div class="feat">🌙 Always Available</div>
+    </div>
+    <div class="chat-wrap">
+      <iframe src="https://paymegpt.com/agents/220/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
+    </div>
+  </div>
+</section>
+
+<section class="section services-sec" style="background:#fff">
+  <div class="sec-label">Treatments</div>
+  <h2>Our <em>Services</em></h2>
+  <div class="svc-grid">
+    
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&auto=format" alt="RF" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">RF</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&auto=format" alt="Dermaplaning" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Dermaplaning</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section rev-section">
+  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
+  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
+  <div class="rev-grid">
+    
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-text">"https://aqualunaatx.com/xmlrpc.php"</div>
+      <div class="rev-author">Verified Client</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-text">"; font-display: swap;  src: url("</div>
+      <div class="rev-author">Verified Client</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-text">"https://aqualunaatx.com/about-aqualuna/"</div>
+      <div class="rev-author">Verified Client</div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="cta-section">
+  <h2>Ready to Look Your Best?</h2>
+  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
+  <div class="btns" style="justify-content:center">
+    <a href="#sage" class="btn btn-light">Talk to Sage</a>
+    <a href="tel:5125181876" class="btn btn-ghost">Call (512) 518-1876</a>
+    <a href="tel:5125181876" target="_blank" class="btn btn-ghost">Book Now</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(255,255,255,0.6);margin-bottom:16px">Aqua Luna Aesthetics</div>
+    <p class="ft-tagline">Personalized aesthetic treatments delivered by licensed professionals. Natural-looking results, expert care.</p>
+    <div class="ft-contact">
+      469 custom-background et_button_no_icon et_pb_button_helpe<br>
+      
+      <a href="tel:5125181876">(512) 518-1876</a><br>
+      <a href="mailto:aqualunaatx@gmail.com">aqualunaatx@gmail.com</a><br>
+    </div>
+  </div>
+  <div>
+    <div class="ft-title">Treatments</div>
+    <div class="ft-links">
+      <a href="#sage">RF</a><a href="#sage">Dermaplaning</a>
+    </div>
+  </div>
+  <div>
+    <div class="ft-title">Connect</div>
+    <div class="ft-contact">
+      <a href="https://www.instagram.com/aqualunaatx/" target="_blank">Instagram →</a><br>
+      <a href="https://www.facebook.com/AquaLunaATX/" target="_blank">Facebook →</a><br>
+      
+    </div>
+  </div>
+</footer>
+<div class="ft-bot">
+  <span>© Aqua Luna Aesthetics</span>
+  <span>Powered by Lumière Systems</span>
+</div>
+
+</body>
+</html>
