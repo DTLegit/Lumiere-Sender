@@ -1,605 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venus De Marco Skin Care | Premium Med Spa Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #1a2744;
-            --secondary-color: #c8a882;
-            --accent-color: #f4f1ec;
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --white: #ffffff;
-            --cream: #f9f7f3;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(26, 39, 68, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .phone-link {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: #243557;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--cream) 0%, var(--accent-color) 100%);
-            padding: 4rem 0;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text h1 .italic {
-            font-style: italic;
-            color: var(--secondary-color);
-        }
-
-        .hero-text p {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .hero-image {
-            background: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=700&fit=crop') center/cover;
-            height: 500px;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(26, 39, 68, 0.15);
-        }
-
-        /* Sage AI Section */
-        .sage-section {
-            padding: 5rem 0;
-            background: var(--white);
-        }
-
-        .sage-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .sage-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .sage-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .feature-chips {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .chip {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 500;
-            border: 1px solid var(--secondary-color);
-        }
-
-        .sage-widget {
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(26, 39, 68, 0.1);
-        }
-
-        /* Services */
-        .services {
-            padding: 5rem 0;
-            background: var(--cream);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(26, 39, 68, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service-content {
-            padding: 2rem;
-        }
-
-        .service-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .service-content p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Reviews */
-        .reviews {
-            padding: 5rem 0;
-            background: var(--white);
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .review-card {
-            background: var(--accent-color);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .stars {
-            color: #fbbf24;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-        }
-
-        .reviewer-name {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 5rem 0;
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-white {
-            background: var(--white);
-            color: var(--primary-color);
-        }
-
-        .btn-white:hover {
-            background: var(--cream);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--text-dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #cbd5e0;
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .footer-section a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #4a5568;
-            color: #a0aec0;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-ctas {
-                justify-content: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header-actions {
-                gap: 1rem;
-            }
-
-            .phone-link {
-                display: none;
-            }
-
-            .trust-badges {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Venus De Marco Skin Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+header{background:#fff;padding:0 48px;height:72px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
+.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
+.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
+.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.btn{padding:14px 32px;font-size:13px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
+.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px)}
+.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+.trust{display:flex;gap:20px;flex-wrap:wrap}
+.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
+.trust span::before{content:'-- ';color:var(--accent);opacity:1}
+.hero-r{position:relative;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
+.stat-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+.section{padding:100px 48px}
+.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
+h2 em{font-style:italic;color:var(--accent)}
+.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+.sage-inner{max-width:960px;margin:0 auto}
+.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
+.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
+.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
+.svc-body{padding:22px}
+.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
+.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
+.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
+.svc-link::after{content:' →'}
+.rev-section{background:var(--dark);color:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
+.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
+.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);max-width:480px}
+.team-photo-wrap{background:#f5f2ee;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
+.team-body{padding:24px}
+.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
+.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
+.cta-section h2{color:#fff;margin-bottom:12px}
+.cta-section p{opacity:0.85;margin-bottom:36px}
+.btn-light{background:#fff;color:var(--text);font-weight:600}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
+footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
+.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
+.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
+.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Venus De Marco Skin Care</div>
-                <div class="header-actions">
-                    <a href="tel:(512) 626-6141" class="phone-link">(512) 626-6141</a>
-                    <a href="tel:(512) 626-6141" class="btn btn-primary">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </header>
+<header>
+  <div class="brand-name">
+    Venus De Marco Skin Care
+  </div>
+  <div class="hdr-r">
+    <a href="tel:5126266141">(512) 626-6141</a>
+    <a href="#sage">Meet Sage</a>
+    <a href="tel:5126266141" class="hdr-cta">Book Now</a>
+  </div>
+</header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Reveal Your Most <span class="italic">Beautiful</span> Self</h1>
-                    <p>Experience premium aesthetic treatments with personalized care and exceptional results at Venus De Marco Skin Care.</p>
-                    <div class="hero-ctas">
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Start Your Journey</a>
-                        <a href="#services" class="btn btn-secondary">View Services</a>
-                    </div>
-                    <div class="trust-badges">
-                        <div class="badge">✨ Licensed Professionals</div>
-                        <div class="badge">🏆 Premium Treatments</div>
-                        <div class="badge">💎 Personalized Care</div>
-                    </div>
-                </div>
-                <div class="hero-image"></div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-l">
+    <div class="eyebrow">Premier Med Spa &middot; Aesthetic Excellence</div>
+    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
+    <p class="hero-sub">Expert aesthetic treatments personalized to you.</p>
+    <div class="btns">
+      <a href="tel:5126266141" class="btn btn-p">Book Consultation</a>
+      <a href="#sage" class="btn btn-o">Chat with Sage</a>
+    </div>
+    <div class="trust">
+      <span>Board Certified</span><span>Natural Results</span><span>Free Consults</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&auto=format" alt="Venus De Marco Skin Care" onerror="this.style.background='#f0e8d8'">
+  </div>
+</section>
 
-    <!-- Sage AI Section -->
-    <section class="sage-section">
-        <div class="container">
-            <div class="sage-header">
-                <h2>Meet Sage, Your Personal Beauty Consultant</h2>
-                <p>Get instant answers about treatments, pricing, and scheduling. Sage is here 24/7 to help you achieve your aesthetic goals.</p>
-            </div>
-            <div class="feature-chips">
-                <span class="chip">Treatment Recommendations</span>
-                <span class="chip">Instant Pricing</span>
-                <span class="chip">Schedule Consultations</span>
-                <span class="chip">Aftercare Guidance</span>
-                <span class="chip">FAQ Support</span>
-            </div>
-            <div class="sage-widget">
-                <iframe src="https://paymegpt.com/agents/267/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-            </div>
-        </div>
-    </section>
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
+  <div class="stat-item"><div class="stat-num">5&#9733;</div><div class="stat-label">Client Rated</div></div>
+  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
+</div>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Premium Aesthetic Services</h2>
-                <p>Discover our comprehensive range of advanced treatments designed to enhance your natural beauty and boost your confidence.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=200&fit=crop')"></div>
-                    <div class="service-content">
-                        <h3>Botox</h3>
-                        <p>Smooth away fine lines and wrinkles with our expertly administered Botox treatments for a naturally refreshed appearance.</p>
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=200&fit=crop')"></div>
-                    <div class="service-content">
-                        <h3>Fillers</h3>
-                        <p>Restore volume and enhance facial contours with our premium dermal fillers for youthful, natural-looking results.</p>
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=200&fit=crop')"></div>
-                    <div class="service-content">
-                        <h3>Laser</h3>
-                        <p>Advanced laser treatments for skin rejuvenation, hair removal, and various skin concerns with cutting-edge technology.</p>
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391182219-e080b4d90309?w=400&h=200&fit=crop')"></div>
-                    <div class="service-content">
-                        <h3>Microneedling</h3>
-                        <p>Stimulate collagen production and improve skin texture with our professional microneedling treatments for radiant skin.</p>
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop')"></div>
-                    <div class="service-content">
-                        <h3>IV Therapy</h3>
-                        <p>Boost your wellness and enhance your glow from within with our customized IV therapy treatments and vitamin infusions.</p>
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1571019613914-85f342c6a11e?w=400&h=200&fit=crop')"></div>
-                    <div class="service-content">
-                        <h3>Wellness Packages</h3>
-                        <p>Comprehensive treatment plans combining multiple services for optimal results and a complete aesthetic transformation.</p>
-                        <a href="tel:(512) 626-6141" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section" id="sage" style="background:var(--bg)">
+  <div class="sage-inner">
+    <div class="sec-label">Available 24/7</div>
+    <h2>Meet Sage &mdash;<br><em>Your Aesthetic Guide</em></h2>
+    <p class="sec-sub">Sage knows every service at Venus De Marco Skin Care. Ask anything, explore your options, or upload a photo for personalized talking points before your consultation.</p>
+    <div class="feats">
+      <div class="feat">&#128248; Photo Analysis</div>
+      <div class="feat">&#128172; Treatment Guidance</div>
+      <div class="feat">&#128197; Book Consultation</div>
+      <div class="feat">&#127777; Available 24/7</div>
+    </div>
+    <div class="chat-wrap">
+      <iframe src="https://paymegpt.com/agents/276/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
+    </div>
+  </div>
+</section>
 
-    <!-- Reviews -->
-    <section class="reviews">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Our Clients Say</h2>
-                <p>Real experiences from clients who have transformed their confidence with Venus De Marco Skin Care.</p>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"The staff at Venus De Marco made me feel so comfortable during my first Botox treatment. The results are exactly what I hoped for - natural and refreshing. I can't wait to come back!"</p>
-                    <div class="reviewer-name">- Sarah M.</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"I've been coming here for laser treatments and IV therapy for months. The professionalism and attention to detail are outstanding. My skin has never looked better!"</p>
-                    <div class="reviewer-name">- Jessica L.</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"From microneedling to fillers, every treatment I've received has exceeded my expectations. The team truly cares about achieving the best results for each client."</p>
-                    <div class="reviewer-name">- Amanda R.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section" style="background:#fff">
+  <div class="sec-label">Treatments</div>
+  <h2>Our <em>Services</em></h2>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&auto=format" alt="Botox & Dysport" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Botox & Dysport</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&auto=format" alt="Dermal Fillers" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Dermal Fillers</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format" alt="Microneedling" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Microneedling</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1570654639102-bdd95efeca7a?w=600&h=400&fit=crop&auto=format" alt="Chemical Peels" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Chemical Peels</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop&auto=format" alt="Laser Treatments" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Laser Treatments</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop&auto=format" alt="IV Therapy" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">IV Therapy</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div></div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Begin Your Transformation?</h2>
-            <p>Schedule your consultation today and discover how Venus De Marco Skin Care can help you achieve your aesthetic goals.</p>
-            <a href="tel:(512) 626-6141" class="btn btn-white">Book Your Consultation</a>
-        </div>
-    </section>
+<section class="section rev-section">
+  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
+  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"The results were incredible — I look 10 years younger and feel completely natural."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"Best medspa experience I have had. The team is so professional and genuinely cares."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"I have been to several medspas but this one is on another level. Worth every penny."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div></div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Venus De Marco Skin Care</h3>
-                    <p>Premium aesthetic treatments with personalized care and exceptional results.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <a href="tel:(512) 626-6141">(512) 626-6141</a>
-                    <a href="mailto:venusdemarco@gmail.com">venusdemarco@gmail.com</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <p>Botox & Fillers</p>
-                    <p>Laser Treatments</p>
-                    <p>Microneedling</p>
-                    <p>IV Therapy</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Venus De Marco Skin Care. All rights reserved. | Powered by Lumière Systems</p>
-            </div>
-        </div>
-    </footer>
+
+
+<section class="cta-section">
+  <h2>Ready to Look Your Best?</h2>
+  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
+  <div class="btns" style="justify-content:center">
+    <a href="#sage" class="btn btn-light">Talk to Sage</a>
+    <a href="tel:5126266141" class="btn btn-ghost">Call (512) 626-6141</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <p class="ft-tagline">Personalized aesthetic treatments delivered by licensed professionals.</p>
+    <div class="ft-contact">
+      
+      
+      <a href="tel:5126266141">(512) 626-6141</a><br>
+      <a href="mailto:venusdemarco@gmail.com">venusdemarco@gmail.com</a>
+    </div>
+  </div>
+  <div>
+    <div class="ft-title">Treatments</div>
+    <div class="ft-links"><a href="#sage">Botox & Dysport</a><a href="#sage">Dermal Fillers</a><a href="#sage">Microneedling</a><a href="#sage">Chemical Peels</a><a href="#sage">Laser Treatments</a><a href="#sage">IV Therapy</a></div>
+  </div>
+  <div>
+    <div class="ft-title">Connect</div>
+    <div class="ft-contact">
+      
+      
+      
+    </div>
+  </div>
+</footer>
+<div class="ft-bot">
+  <span>&copy; Venus De Marco Skin Care</span>
+  <span>Powered by Lumi&egrave;re Systems</span>
+</div>
 </body>
 </html>
