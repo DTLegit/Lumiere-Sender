@@ -1,254 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Glow Spa & Wax House — https://www.linkedin.com</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-header{background:#fff;padding:0 48px;height:72px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
-.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
-.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
-.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
-.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px}
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
-.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
-.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
-h1 em{font-style:italic;color:var(--accent)}
-.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
-.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-.btn{padding:14px 32px;font-size:13px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
-.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px)}
-.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
-.trust{display:flex;gap:20px;flex-wrap:wrap}
-.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
-.trust span::before{content:'-- ';color:var(--accent);opacity:1}
-.hero-r{position:relative;overflow:hidden}
-.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
-.stat-item{text-align:center}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
-.stat-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
-.section{padding:100px 48px}
-.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
-h2 em{font-style:italic;color:var(--accent)}
-.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
-.sage-inner{max-width:960px;margin:0 auto}
-.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
-.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
-.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
-.svc-body{padding:22px}
-.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
-.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
-.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
-.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
-.svc-link::after{content:' →'}
-.rev-section{background:var(--dark);color:#fff}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
-.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
-.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
-.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
-.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);max-width:480px}
-.team-photo-wrap{background:#f5f2ee;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
-.team-body{padding:24px}
-.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
-.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
-.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
-.cta-section h2{color:#fff;margin-bottom:12px}
-.cta-section p{opacity:0.85;margin-bottom:36px}
-.btn-light{background:#fff;color:var(--text);font-weight:600}
-.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
-footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
-.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
-.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
-.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
-.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
-@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
-@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Spa & Wax House - Premium Spa & Waxing Services in Austin, TX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2744;
+            --primary-light: #2a3854;
+            --accent: #d4af37;
+            --accent-light: #e6c55a;
+            --neutral-100: #faf9f7;
+            --neutral-200: #f5f2ee;
+            --neutral-300: #e8e3dc;
+            --neutral-800: #2c2c2c;
+            --neutral-900: #1a1a1a;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-800);
+            background: var(--neutral-100);
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--neutral-300);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .phone-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--neutral-100) 0%, #f8f6f3 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 em {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--neutral-800);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(26, 39, 68, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Sage AI Section */
+        .sage-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .sage-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sage-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .sage-header p {
+            font-size: 1.1rem;
+            color: var(--neutral-800);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-chips {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            background: var(--neutral-200);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--neutral-100);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--neutral-800);
+            opacity: 0.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(26, 39, 68, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 39, 68, 0.12);
+        }
+
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: var(--neutral-800);
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .service-price {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--neutral-100);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .review-stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: var(--neutral-100);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            justify-items: center;
+        }
+
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(26, 39, 68, 0.08);
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 250px;
+            background: var(--neutral-200);
+            border-radius: 8px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: var(--neutral-200);
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .team-title {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            color: var(--neutral-800);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-actions {
+                gap: 10px;
+            }
+
+            .phone-link {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-chips {
+                justify-content: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <div class="brand-name">
-    <img src="png" style="height:40px;object-fit:contain" alt="Glow Spa & Wax House" onerror="this.outerHTML='Glow Spa & Wax House'">
-  </div>
-  <div class="hdr-r">
-    <a href="tel:5128401080">(512) 840-1080</a>
-    <a href="#sage">Meet Sage</a>
-    <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ" class="hdr-cta">Book Now</a>
-  </div>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo serif">Glow Spa & Wax House</a>
+                <div class="header-actions">
+                    <a href="tel:512-840-1080" class="phone-link">(512) 840-1080</a>
+                    <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ" target="_blank" class="btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<section class="hero">
-  <div class="hero-l">
-    <div class="eyebrow">https://www.linkedin.com &middot; Aesthetic Excellence</div>
-    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
-    <p class="hero-sub">Expert aesthetic treatments personalized to you. Proudly serving https://www.linkedin.com.</p>
-    <div class="btns">
-      <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ" class="btn btn-p">Book Consultation</a>
-      <a href="#sage" class="btn btn-o">Chat with Sage</a>
-    </div>
-    <div class="trust">
-      <span>Board Certified</span><span>Natural Results</span><span>Free Consults</span>
-    </div>
-  </div>
-  <div class="hero-r">
-    <img class="hero-img" src="https://static.wixstatic.com/media/449f0a_b03104c11427483e9857ea65d956caa6~mv2.jpg/v1/fill/w_2500,h_1785,al_c/449f0a_b03104c11427483e9857ea65d956caa6~mv2.jpg" alt="Glow Spa & Wax House" onerror="this.style.background='#f0e8d8'">
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="serif">Reveal Your Natural <em>Glow</em> in Austin</h1>
+                    <p>Experience premium spa and waxing services in a luxurious, welcoming environment. Your journey to radiant skin starts here.</p>
+                    <div class="hero-ctas">
+                        <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ" target="_blank" class="btn-primary">Book Appointment</a>
+                        <a href="tel:512-840-1080" class="btn-secondary">Call Now</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <span>⭐</span>
+                            <span>Licensed Professionals</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span>🏆</span>
+                            <span>Premium Products</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span>✨</span>
+                            <span>Luxury Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://static.wixstatic.com/media/449f0a_b03104c11427483e9857ea65d956caa6~mv2.jpg/v1/fill/w_2500,h_1785,al_c/449f0a_b03104c11427483e9857ea65d956caa6~mv2.jpg" alt="Glow Spa & Wax House - Luxury Spa Experience">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
-  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
-  <div class="stat-item"><div class="stat-num">5&#9733;</div><div class="stat-label">Client Rated</div></div>
-  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
-</div>
+    <!-- Sage AI Section -->
+    <section class="sage-section">
+        <div class="container">
+            <div class="sage-header">
+                <h2 class="serif">Meet Sage, Your Personal Spa Concierge</h2>
+                <p>Get instant answers about our services, pricing, and availability. Sage is here to help you find the perfect treatment for your needs.</p>
+            </div>
+            <div class="feature-chips">
+                <span class="chip">Instant Booking</span>
+                <span class="chip">Service Recommendations</span>
+                <span class="chip">Pricing Information</span>
+                <span class="chip">Treatment Questions</span>
+                <span class="chip">Availability Check</span>
+            </div>
+            <iframe src="https://paymegpt.com/agents/316/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;border-radius:12px;box-shadow:0 20px 40px rgba(26, 39, 68, 0.1);"></iframe>
+        </div>
+    </section>
 
-<section class="section" id="sage" style="background:var(--bg)">
-  <div class="sage-inner">
-    <div class="sec-label">Available 24/7</div>
-    <h2>Meet Sage &mdash;<br><em>Your Aesthetic Guide</em></h2>
-    <p class="sec-sub">Sage knows every service at Glow Spa & Wax House. Ask anything, explore your options, or upload a photo for personalized talking points before your consultation.</p>
-    <div class="feats">
-      <div class="feat">&#128248; Photo Analysis</div>
-      <div class="feat">&#128172; Treatment Guidance</div>
-      <div class="feat">&#128197; Book Consultation</div>
-      <div class="feat">&#127777; Available 24/7</div>
-    </div>
-    <div class="chat-wrap">
-      <iframe src="https://paymegpt.com/agents/306/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
-    </div>
-  </div>
-</section>
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">Our Signature Services</h2>
+                <p>Indulge in our comprehensive menu of spa and waxing treatments designed to enhance your natural beauty.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">✨</div>
+                    <div class="service-content">
+                        <h3 class="serif">Glow Spa Treatments</h3>
+                        <p>Rejuvenating facial treatments designed to restore your skin's natural radiance and vitality.</p>
+                        <div class="service-price">From $85</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🌟</div>
+                    <div class="service-content">
+                        <h3 class="serif">Professional Waxing</h3>
+                        <p>Expert waxing services for smooth, silky skin using premium products and gentle techniques.</p>
+                        <div class="service-price">From $25</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">💎</div>
+                    <div class="service-content">
+                        <h3 class="serif">Memberships & Packages</h3>
+                        <p>Save on your favorite treatments with our exclusive membership options and service packages.</p>
+                        <div class="service-price">Starting at $99/month</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🌿</div>
+                    <div class="service-content">
+                        <h3 class="serif">Premium Products</h3>
+                        <p>Take your glow home with our curated selection of professional-grade skincare products.</p>
+                        <div class="service-price">Varies</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">💆‍♀️</div>
+                    <div class="service-content">
+                        <h3 class="serif">Relaxation Treatments</h3>
+                        <p>Unwind with our soothing treatments designed to melt away stress and tension.</p>
+                        <div class="service-price">From $65</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🌸</div>
+                    <div class="service-content">
+                        <h3 class="serif">Specialty Services</h3>
+                        <p>Discover our unique treatments tailored to address your specific skincare needs and goals.</p>
+                        <div class="service-price">From $75</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" style="background:#fff">
-  <div class="sec-label">Treatments</div>
-  <h2>Our <em>Services</em></h2>
-  <div class="svc-grid">
-    <div class="svc-card">
-      <div style="height:180px;background:linear-gradient(135deg,#1a2744 0%,#0d1627 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
-        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">✦</div>
-        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
-      </div>
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Glow Spa &amp; Wax House</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div style="height:180px;background:linear-gradient(135deg,#243660 0%,#1a2744 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
-        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">◈</div>
-        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
-      </div>
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Services</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div style="height:180px;background:linear-gradient(135deg,#c4922a 0%,#8a6010 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
-        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">◇</div>
-        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
-      </div>
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Memberships &amp; Packages</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div style="height:180px;background:linear-gradient(135deg,#1a3a2a 0%,#0d1e15 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
-        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">✧</div>
-        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
-      </div>
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Products</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div></div>
-</section>
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">What Our Clients Say</h2>
+                <p>Experience the difference that personalized care and attention to detail can make.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Absolutely love coming here! The staff is incredibly professional and the atmosphere is so relaxing. My skin has never looked better since I started my monthly facials here."</p>
+                    <div class="review-author">- Sarah M.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"The waxing services are top-notch and surprisingly comfortable. The estheticians really know what they're doing and make you feel at ease throughout the entire process."</p>
+                    <div class="review-author">- Jessica L.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"I've been a member for over a year now and it's the best investment I've made for my self-care routine. The membership benefits are incredible and the results speak for themselves."</p>
+                    <div class="review-author">- Amanda R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section rev-section">
-  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
-  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
-  <div class="rev-grid">
-    <div class="rev-card">
-      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="rev-text">"The results were incredible — I look 10 years younger and feel completely natural."</div>
-      <div class="rev-author">Verified Client &middot; Google</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="rev-text">"Best medspa experience I have had. The team is so professional and genuinely cares."</div>
-      <div class="rev-author">Verified Client &middot; Google</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="rev-text">"I have been to several medspas but this one is on another level. Worth every penny."</div>
-      <div class="rev-author">Verified Client &middot; Google</div>
-    </div></div>
-</section>
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">Meet Our Expert Team</h2>
+                <p>Our licensed professionals are dedicated to helping you achieve your skincare goals.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/671185483_18580489270057047_1665627902117995885_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Swbr_kWaK0AQ7kNvwF8A2-0&_nc_oc=AdqsSJGqrl3Q_WK3ksJ7HoWOeZx47j0dNYUA0d3Yw08J_NucmPq67yyE0eGeviuX8J0&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=7706sr-e8POi6T-HAmRGkA&_nc_tpa=Q5bMBQGUpyPLE2SFG2-AQP2cB-HdUcBKnDiVkaFaXn-ub0bapdTkkIdSkj7Mw2JwaAdzZXamPcQiObT_&oh=00_Af0NMV7LEypLB1CZ8B0jztkICq84ar3iRrpysZR8hopSEA&oe=69F159CE" alt="Glow Spa & Wax House Team">
+                    </div>
+                    <h3 class="team-name serif">Our Expert Team</h3>
+                    <p class="team-title">Licensed Estheticians</p>
+                    <p class="team-bio">Our talented team of licensed professionals brings years of experience and passion for skincare to every treatment. We're committed to providing you with exceptional service and outstanding results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-<section class="cta-section">
-  <h2>Ready to Look Your Best?</h2>
-  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
-  <div class="btns" style="justify-content:center">
-    <a href="#sage" class="btn btn-light">Talk to Sage</a>
-    <a href="tel:5128401080" class="btn btn-ghost">Call (512) 840-1080</a>
-  </div>
-</section>
-
-<footer>
-  <div>
-    <p class="ft-tagline">Glow Spa and Wax House is a spa and waxing salon in Austin, TX. 
-Offering men</p>
-    <div class="ft-contact">
-      7739 Northcross Dr"},"telephone":"512-840-1080"}<br>
-      https://www.linkedin.com<br>
-      <a href="tel:5128401080">(512) 840-1080</a><br>
-      <a href="mailto:austinglowspa@gmail.com">austinglowspa@gmail.com</a>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Treatments</div>
-    <div class="ft-links"><a href="#sage">Glow Spa &amp; Wax House</a><a href="#sage">Services</a><a href="#sage">Memberships &amp; Packages</a><a href="#sage">Products</a></div>
-  </div>
-  <div>
-    <div class="ft-title">Connect</div>
-    <div class="ft-contact">
-      <a href="https://www.instagram.com/glowspaandwaxhouse" target="_blank">Instagram &rarr;</a><br>
-      <a href="https://www.facebook.com/austinglowspa/"  target="_blank">Facebook &rarr;</a><br>
-      <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ"   target="_blank">Book Online &rarr;</a>
-    </div>
-  </div>
-</footer>
-<div class="ft-bot">
-  <span>&copy; Glow Spa & Wax House &mdash; https://www.linkedin.com</span>
-  <span>Powered by Lumi&egrave;re Systems</span>
-</div>
-</body>
-</html>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="serif">Ready to Discover Your Glow?</h2>
+            <p>Book your appointment today and experience the difference that professional spa care can make.</p>
+            <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTa
