@@ -1,659 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spa La La Aesthetics & Wellness - Austin's Premier Med Spa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #1a2744;
-            --secondary: #d4af37;
-            --accent: #f4e8d0;
-            --text-dark: #2c2c2c;
-            --text-light: #6b7280;
-            --bg-light: #fafbfc;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        .serif {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(26, 39, 68, 0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .phone-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .cta-btn {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-        }
-
-        .cta-btn:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-
-        .cta-btn.secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .cta-btn.secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-            gap: 4rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .hero-content .italic {
-            font-style: italic;
-            color: var(--secondary);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .trust-badges {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .hero-image {
-            position: relative;
-            height: 600px;
-            border-radius: 20px;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-            filter: brightness(1.1);
-        }
-
-        /* Sage AI Section */
-        .sage-section {
-            background: var(--bg-light);
-            padding: 6rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .feature-chips {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .chip {
-            background: var(--white);
-            color: var(--primary);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(26, 39, 68, 0.1);
-        }
-
-        .sage-embed {
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(26, 39, 68, 0.15);
-        }
-
-        /* Services Section */
-        .services-section {
-            padding: 6rem 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(26, 39, 68, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service-content {
-            padding: 2rem;
-        }
-
-        .service-content h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .service-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            background: var(--primary);
-            color: var(--white);
-            padding: 6rem 0;
-        }
-
-        .reviews-section .section-header h2,
-        .reviews-section .section-header p {
-            color: var(--white);
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .review-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stars {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .reviewer-name {
-            font-weight: 600;
-            color: var(--accent);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--accent);
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .footer-section a:hover {
-            color: var(--white);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            padding: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: background 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                padding: 0 1rem;
-            }
-
-            .header-right {
-                gap: 1rem;
-            }
-
-            .phone-link {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 6rem 1rem 4rem;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-ctas {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-btn {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-
-            .hero-image {
-                height: 400px;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-chips {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-section h2 {
-                font-size: 2.2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card {
-                margin: 0 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Spa La La Aesthetics & Wellness, LLC. — https://www.linkedin.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+header{background:#fff;padding:0 48px;height:72px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
+.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
+.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
+.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.btn{padding:14px 32px;font-size:13px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
+.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px)}
+.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+.trust{display:flex;gap:20px;flex-wrap:wrap}
+.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
+.trust span::before{content:'-- ';color:var(--accent);opacity:1}
+.hero-r{position:relative;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
+.stat-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+.section{padding:100px 48px}
+.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
+h2 em{font-style:italic;color:var(--accent)}
+.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+.sage-inner{max-width:960px;margin:0 auto}
+.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
+.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
+.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
+.svc-body{padding:22px}
+.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
+.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
+.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
+.svc-link::after{content:' →'}
+.rev-section{background:var(--dark);color:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
+.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
+.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);max-width:480px}
+.team-photo-wrap{background:#f5f2ee;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
+.team-body{padding:24px}
+.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
+.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
+.cta-section h2{color:#fff;margin-bottom:12px}
+.cta-section p{opacity:0.85;margin-bottom:36px}
+.btn-light{background:#fff;color:var(--text);font-weight:600}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
+footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
+.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
+.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
+.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-text serif">Spa La La</div>
-            </div>
-            <div class="header-right">
-                <a href="tel:5129533540" class="phone-link">(512) 953-3540</a>
-                <a href="tel:5129533540" class="cta-btn">Book Now</a>
-            </div>
-        </div>
-    </header>
+<header>
+  <div class="brand-name">
+    <img src="png" style="height:40px;object-fit:contain" alt="Spa La La Aesthetics & Wellness, LLC." onerror="this.outerHTML='Spa La La Aesthetics & Wellness, LLC.'">
+  </div>
+  <div class="hdr-r">
+    <a href="tel:5129533540">(512) 953-3540</a>
+    <a href="#sage">Meet Sage</a>
+    <a href="tel:5129533540" class="hdr-cta">Book Now</a>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="serif">Austin's Premier <span class="italic">Wellness</span> Destination</h1>
-            <p>Experience transformative skin rejuvenation, advanced laser treatments, and luxurious wellness services at Spa La La Aesthetics & Wellness. Your journey to radiant skin starts here.</p>
-            <div class="hero-ctas">
-                <a href="tel:5129533540" class="cta-btn">Book Consultation</a>
-                <a href="#services" class="cta-btn secondary">View Services</a>
-            </div>
-            <div class="trust-badges">
-                <div class="badge">✓ Licensed Professionals</div>
-                <div class="badge">✓ Advanced Technology</div>
-                <div class="badge">✓ Personalized Care</div>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://austinspalala.com/wp-content/uploads/2025/12/Logo-in-White-1-e1766068919404-1024x293.png" alt="Spa La La Aesthetics & Wellness" />
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-l">
+    <div class="eyebrow">https://www.linkedin.com &middot; Aesthetic Excellence</div>
+    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
+    <p class="hero-sub">Expert aesthetic treatments personalized to you. Proudly serving https://www.linkedin.com.</p>
+    <div class="btns">
+      <a href="tel:5129533540" class="btn btn-p">Book Consultation</a>
+      <a href="#sage" class="btn btn-o">Chat with Sage</a>
+    </div>
+    <div class="trust">
+      <span>Board Certified</span><span>Natural Results</span><span>Free Consults</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img class="hero-img" src="https://austinspalala.com/wp-content/uploads/2025/12/Logo-in-White-1-e1766068919404-1024x293.png" alt="Spa La La Aesthetics & Wellness, LLC." onerror="this.style.background='#f0e8d8'">
+  </div>
+</section>
 
-    <!-- Sage AI Section -->
-    <section class="sage-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="serif">Meet Sage - Your AI Wellness Consultant</h2>
-                <p>Get instant answers about our services, pricing, and availability. Sage is here to help you find the perfect treatment for your needs.</p>
-            </div>
-            <div class="feature-chips">
-                <div class="chip">24/7 Availability</div>
-                <div class="chip">Instant Quotes</div>
-                <div class="chip">Service Matching</div>
-                <div class="chip">Easy Booking</div>
-            </div>
-            <div class="sage-embed">
-                <iframe src="https://paymegpt.com/agents/284/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-            </div>
-        </div>
-    </section>
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
+  <div class="stat-item"><div class="stat-num">5&#9733;</div><div class="stat-label">Client Rated</div></div>
+  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
+</div>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="serif">Our Premium Services</h2>
-                <p>From advanced laser treatments to luxurious facials, we offer comprehensive wellness and aesthetic services tailored to your unique needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3 class="serif">Advanced Laser Treatments</h3>
-                        <p>State-of-the-art laser technology for skin resurfacing, hair removal, and pigmentation correction. Achieve dramatic results with minimal downtime.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3 class="serif">Therapeutic Massage</h3>
-                        <p>Rejuvenating massage therapies designed to relax your body, reduce stress, and promote overall wellness and healing.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3 class="serif">Luxury Facials</h3>
-                        <p>Customized facial treatments including hydrofacials, dermaplaning, and LED light therapy for glowing, healthy skin.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3 class="serif">Specialized Skincare</h3>
-                        <p>Professional-grade skincare treatments tailored to address your specific skin concerns and goals for optimal results.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3 class="serif">Face Reality Acne Bootcamp</h3>
-                        <p>Comprehensive acne treatment program combining professional treatments with personalized home care for clear, healthy skin.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3 class="serif">Bridal Bootcamp & Waxing</h3>
-                        <p>Complete bridal preparation packages and professional waxing services to help you look and feel your absolute best for any special occasion.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section" id="sage" style="background:var(--bg)">
+  <div class="sage-inner">
+    <div class="sec-label">Available 24/7</div>
+    <h2>Meet Sage &mdash;<br><em>Your Aesthetic Guide</em></h2>
+    <p class="sec-sub">Sage knows every service at Spa La La Aesthetics & Wellness, LLC.. Ask anything, explore your options, or upload a photo for personalized talking points before your consultation.</p>
+    <div class="feats">
+      <div class="feat">&#128248; Photo Analysis</div>
+      <div class="feat">&#128172; Treatment Guidance</div>
+      <div class="feat">&#128197; Book Consultation</div>
+      <div class="feat">&#127777; Available 24/7</div>
+    </div>
+    <div class="chat-wrap">
+      <iframe src="https://paymegpt.com/agents/299/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
+    </div>
+  </div>
+</section>
 
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="serif">What Our Clients Say</h2>
-                <p>Real experiences from our valued clients who have transformed their skin and wellness journey with us.</p>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"The laser treatments at Spa La La have completely transformed my skin. The staff is incredibly knowledgeable and made me feel comfortable throughout the entire process. I couldn't be happier with my results!"</p>
-                    <div class="reviewer-name">Sarah M.</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"I've been coming here for facials and the Face Reality Acne Bootcamp. My skin has never looked better! The personalized approach and attention to detail is exactly what I was looking for."</p>
-                    <div class="reviewer-name">Jessica L.</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"From the moment you walk in, you feel pampered and cared for. The Bridal Bootcamp was perfect for my wedding preparation. I felt absolutely radiant on my special day!"</p>
-                    <div class="reviewer-name">Amanda K.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section" style="background:#fff">
+  <div class="sec-label">Treatments</div>
+  <h2>Our <em>Services</em></h2>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div style="height:180px;background:linear-gradient(135deg,#1a2744 0%,#0d1627 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">✦</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Phone: (512) 953-3540</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div style="height:180px;background:linear-gradient(135deg,#243660 0%,#1a2744 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">◈</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Laser</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div style="height:180px;background:linear-gradient(135deg,#c4922a 0%,#8a6010 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">◇</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Massage</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div style="height:180px;background:linear-gradient(135deg,#1a3a2a 0%,#0d1e15 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">✧</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Facials</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div style="height:180px;background:linear-gradient(135deg,#2a1a44 0%,#150d27 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">⊕</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Specialized Skincare</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div style="height:180px;background:linear-gradient(135deg,#3a1a1a 0%,#1e0d0d 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+        <div style="font-size:2.8rem;color:rgba(255,255,255,0.9)">◎</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:3px;text-transform:uppercase">Treatment</div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Face Reality Acne Bootcamp</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div></div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="serif">Ready to Transform Your Skin?</h2>
-            <p>Take the first step towards your wellness journey. Book your consultation today and discover how we can help you achieve your aesthetic goals.</p>
-            <a href="tel:5129533540" class="cta-btn">Book Your Consultation</a>
-        </div>
-    </section>
+<section class="section rev-section">
+  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
+  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"The results were incredible — I look 10 years younger and feel completely natural."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"Best medspa experience I have had. The team is so professional and genuinely cares."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"I have been to several medspas but this one is on another level. Worth every penny."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div></div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="serif">Contact Info</h3>
-                    <a href="tel:5129533540">(512) 953-3540</a>
-                    <a href="mailto:coralyspalala@gmail.com">coralyspalala@gmail.com</a>
-                    <p>Austin, Texas</p>
-                </div>
-                <div class="footer-section">
-                    <h3 class="serif">Services</h3>
-                    <p>Laser Treatments</p>
-                    <p>Therapeutic Massage</p>
-                    <p>Luxury Facials</p>
-                    <p>Specialized Skincare</p>
-                    <p>Acne Bootcamp</p>
-                    <p>Bridal Services</p>
-                </div>
-                <div class="footer-section">
-                    <h3 class="serif">Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://instagram.com/austinspalala" target="_blank">📷</a>
-                        <a href="https://www.facebook.com/austinspalala" target="_blank">📘</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Spa La La Aesthetics & Wellness, LLC. All rights reserved. | Powered by Lumière Systems</p>
-            </div>
-        </div>
-    </footer>
+
+
+<section class="cta-section">
+  <h2>Ready to Look Your Best?</h2>
+  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
+  <div class="btns" style="justify-content:center">
+    <a href="#sage" class="btn btn-light">Talk to Sage</a>
+    <a href="tel:5129533540" class="btn btn-ghost">Call (512) 953-3540</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <p class="ft-tagline">Austin Spa La La | Aesthetics &amp; Wellness for Skin Rejuvenation, Dermaplaning, Hydrofacials and Lightwave LED Light Therapy.</p>
+    <div class="ft-contact">
+      18 ast-single-post ast-inherit-site-logo-trans<br>
+      https://www.linkedin.com<br>
+      <a href="tel:5129533540">(512) 953-3540</a><br>
+      <a href="mailto:coralyspalala@gmail.com">coralyspalala@gmail.com</a>
+    </div>
+  </div>
+  <div>
+    <div class="ft-title">Treatments</div>
+    <div class="ft-links"><a href="#sage">Phone: (512) 953-3540</a><a href="#sage">Laser</a><a href="#sage">Massage</a><a href="#sage">Facials</a><a href="#sage">Specialized Skincare</a><a href="#sage">Face Reality Acne Bootcamp</a></div>
+  </div>
+  <div>
+    <div class="ft-title">Connect</div>
+    <div class="ft-contact">
+      <a href="https://instagram.com/austinspalala" target="_blank">Instagram &rarr;</a><br>
+      <a href="https://www.facebook.com/austinspalala"  target="_blank">Facebook &rarr;</a><br>
+      
+    </div>
+  </div>
+</footer>
+<div class="ft-bot">
+  <span>&copy; Spa La La Aesthetics & Wellness, LLC. &mdash; https://www.linkedin.com</span>
+  <span>Powered by Lumi&egrave;re Systems</span>
+</div>
 </body>
 </html>
