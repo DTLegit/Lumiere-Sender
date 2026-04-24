@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glamour Plastic Surgery and Med Spa - Premier Aesthetic Treatments in Bellaire, TX</title>
+    <title>Glamour Plastic Surgery and Med Spa | Premier Aesthetic Treatments in Bellaire, TX</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,18 +15,20 @@
         }
 
         :root {
-            --primary-dark: #181818;
-            --primary-gold: #d4af37;
-            --accent-cream: #f5f2ee;
-            --accent-warm: #8b7355;
-            --text-light: #666;
-            --white: #ffffff;
+            --primary: #181818;
+            --secondary: #8B6F47;
+            --accent: #D4B896;
+            --light: #F5F2EE;
+            --white: #FFFFFF;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+            --gold: #C9A96E;
         }
 
         body {
             font-family: 'Jost', sans-serif;
             line-height: 1.6;
-            color: var(--primary-dark);
+            color: var(--text-dark);
             overflow-x: hidden;
         }
 
@@ -36,22 +38,23 @@
 
         /* Header */
         .header {
-            position: sticky;
+            position: fixed;
             top: 0;
-            background: rgba(255, 255, 255, 0.98);
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
         .header-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo-section {
@@ -61,85 +64,70 @@
         }
 
         .logo {
-            height: 60px;
-            width: auto;
+            height: 50px;
         }
 
-        .brand-text {
+        .clinic-name {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--primary-dark);
+            color: var(--primary);
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        .header-right {
+        .header-actions {
             display: flex;
             align-items: center;
             gap: 2rem;
         }
 
-        .phone {
-            font-size: 1.1rem;
+        .phone-number {
             font-weight: 500;
-            color: var(--primary-dark);
+            color: var(--primary);
             text-decoration: none;
+            font-size: 1.1rem;
         }
 
-        .btn {
-            padding: 12px 24px;
+        .cta-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
+            color: var(--white);
+            padding: 0.8rem 2rem;
             border: none;
             border-radius: 50px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
+            font-weight: 600;
             cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-gold), #c4941f);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
+        .cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-dark);
-            border: 2px solid var(--primary-dark);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-dark);
-            color: var(--white);
+            box-shadow: 0 8px 25px rgba(139, 111, 71, 0.4);
         }
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
-            background: linear-gradient(135deg, rgba(24, 24, 24, 0.7), rgba(139, 115, 85, 0.6)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&h=800&fit=crop&auto=format');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(24, 24, 24, 0.7), rgba(139, 111, 71, 0.8)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&h=800&fit=crop&auto=format') center/cover;
+            height: 100vh;
             display: flex;
             align-items: center;
+            text-align: center;
+            color: var(--white);
             position: relative;
         }
 
         .hero-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            color: var(--white);
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 300;
+            font-size: 4rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .hero-subtitle {
@@ -147,52 +135,74 @@
             margin-bottom: 3rem;
             opacity: 0.9;
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
         }
 
         .hero-ctas {
             display: flex;
             gap: 1.5rem;
-            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
         }
 
         .trust-badges {
-            margin-top: 4rem;
             display: flex;
+            justify-content: center;
             gap: 3rem;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        .badge {
+        .trust-badge {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--white);
-            font-size: 0.95rem;
-        }
-
-        .badge::before {
-            content: "✓";
-            background: var(--primary-gold);
-            color: var(--white);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         /* Sage AI Section */
         .sage-section {
             padding: 6rem 0;
-            background: var(--accent-cream);
+            background: var(--light);
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -203,16 +213,16 @@
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 300;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 1rem;
-            color: var(--primary-dark);
         }
 
         .section-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -223,42 +233,58 @@
             align-items: center;
         }
 
-        .sage-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark);
+        .sage-features {
+            display: grid;
+            gap: 1.5rem;
         }
 
-        .sage-info p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
-        .sage-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .chip {
-            padding: 8px 16px;
+        .feature-chip {
             background: var(--white);
-            border: 1px solid var(--primary-gold);
-            border-radius: 25px;
-            font-size: 0.9rem;
-            color: var(--primary-dark);
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature-text p {
+            color: var(--text-light);
         }
 
         .sage-embed {
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        /* Services Section */
-        .services {
+        .sage-embed iframe {
+            width: 100%;
+            height: 640px;
+            border: none;
+        }
+
+        /* Services Grid */
+        .services-section {
             padding: 6rem 0;
             background: var(--white);
         }
@@ -267,24 +293,24 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .service-card {
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
         .service-image {
-            width: 100%;
-            height: 250px;
+            height: 200px;
             background-size: cover;
             background-position: center;
         }
@@ -297,116 +323,144 @@
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--primary-dark);
+            color: var(--primary);
         }
 
         .service-content p {
             color: var(--text-light);
-            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
-        /* Social Proof Section */
-        .social-proof {
+        .service-price {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Social Proof */
+        .reviews-section {
             padding: 6rem 0;
-            background: var(--primary-dark);
-            color: var(--white);
+            background: var(--light);
         }
 
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .stars {
-            color: var(--primary-gold);
+            color: var(--gold);
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
         .review-text {
-            font-style: italic;
+            color: var(--text-light);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            font-style: italic;
         }
 
-        .reviewer {
-            font-weight: 500;
-            color: var(--primary-gold);
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--primary);
         }
 
         /* Team Section */
-        .team {
+        .team-section {
             padding: 6rem 0;
-            background: var(--accent-cream);
+            background: var(--white);
         }
 
         .team-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .team-image {
-            width: 100%;
-            height: 500px;
-            background: var(--accent-cream);
+            background: var(--light);
             border-radius: 20px;
-            object-fit: contain;
+            padding: 2rem;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&auto=format');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .team-info h3 {
             font-size: 2.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--primary-dark);
+            color: var(--primary);
         }
 
-        .team-info .title {
+        .team-title {
             font-size: 1.2rem;
-            color: var(--primary-gold);
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .team-bio {
+            color: var(--text-light);
+            line-height: 1.8;
             margin-bottom: 2rem;
         }
 
-        .team-info p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        /* CTA Section */
-        .cta-section {
+        .credential-badge {
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             padding: 6rem 0;
-            background: linear-gradient(135deg, var(--primary-dark), var(--accent-warm));
-            color: var(--white);
             text-align: center;
+            color: var(--white);
         }
 
-        .cta-content h2 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 300;
+        .final-cta h2 {
+            font-size: 3rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
         }
 
-        .cta-content p {
-            font-size: 1.3rem;
+        .final-cta p {
+            font-size: 1.2rem;
             margin-bottom: 3rem;
             opacity: 0.9;
         }
 
         /* Footer */
         .footer {
-            background: var(--primary-dark);
+            background: var(--primary);
             color: var(--white);
             padding: 4rem 0 2rem;
         }
@@ -418,44 +472,52 @@
             margin-bottom: 3rem;
         }
 
-        .footer-section h4 {
+        .footer-section h3 {
             font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            color: var(--primary-gold);
+            color: var(--accent);
         }
 
-        .footer-section p, .footer-section a {
+        .footer-section p,
+        .footer-section a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
+            line-height: 1.8;
         }
 
         .footer-section a:hover {
-            color: var(--primary-gold);
+            color: var(--accent);
         }
 
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .social-links a {
-            display: inline-block;
+        .social-link {
             width: 40px;
             height: 40px;
-            background: var(--primary-gold);
+            background: var(--secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
         }
 
         .footer-bottom {
-            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
             color: rgba(255, 255, 255, 0.6);
         }
 
@@ -463,25 +525,43 @@
         @media (max-width: 768px) {
             .header-content {
                 padding: 0 1rem;
-                flex-wrap: wrap;
+            }
+
+            .clinic-name {
+                font-size: 1.2rem;
+            }
+
+            .header-actions {
                 gap: 1rem;
             }
 
-            .header-right {
-                gap: 1rem;
+            .phone-number {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
 
             .hero-ctas {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
 
             .trust-badges {
-                gap: 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            .sage-content,
-            .team-content {
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .sage-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -490,37 +570,42 @@
                 grid-template-columns: 1fr;
             }
 
-            .container {
-                padding: 0 1rem;
+            .team-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.95rem;
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
             }
         }
 
         @media (max-width: 480px) {
-            .logo-section {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .brand-text {
-                font-size: 1.2rem;
-            }
-
-            .phone {
+            .btn-primary,
+            .btn-secondary {
+                padding: 1rem 2rem;
                 font-size: 1rem;
             }
 
-            .hero {
-                min-height: 80vh;
+            .section-title {
+                font-size: 1.8rem;
             }
 
-            .hero-content {
-                padding: 0 1rem;
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .service-card {
+                margin: 0 1rem;
             }
         }
     </style>
@@ -530,12 +615,12 @@
     <header class="header">
         <div class="header-content">
             <div class="logo-section">
-                <img src="https://glamourplasticsurgery.com/wp-content/uploads/2019/07/Glamour-Logo.svg" alt="Glamour Plastic Surgery" class="logo">
-                <span class="brand-text serif">Glamour Plastic Surgery & Med Spa</span>
+                <img src="https://glamourplasticsurgery.com/wp-content/uploads/2019/07/Glamour-Logo.svg" alt="Glamour Plastic Surgery Logo" class="logo">
+                <div class="clinic-name serif">Glamour Plastic Surgery</div>
             </div>
-            <div class="header-right">
-                <a href="tel:(713) 766-4643" class="phone">(713) 766-4643</a>
-                <a href="#book" class="btn btn-primary">Book Now</a>
+            <div class="header-actions">
+                <a href="tel:(713) 766-4643" class="phone-number">(713) 766-4643</a>
+                <a href="#book" class="cta-btn">Book Now</a>
             </div>
         </div>
     </header>
@@ -543,16 +628,25 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="serif">Transform Your Beauty Journey</h1>
-            <p class="hero-subtitle">Experience world-class aesthetic treatments with Dr. Bachilo and her expert team at Houston's premier med spa destination.</p>
+            <h1 class="serif">Elevate Your Natural Beauty</h1>
+            <p class="hero-subtitle">Experience world-class aesthetic treatments with Dr. Bachilo at Houston's premier med spa. Transform your confidence with personalized care and cutting-edge techniques.</p>
             <div class="hero-ctas">
-                <a href="#sage" class="btn btn-primary">Get Personalized Consultation</a>
-                <a href="#services" class="btn btn-secondary">Explore Treatments</a>
+                <a href="#sage" class="btn-primary">Get Instant Consultation</a>
+                <a href="#services" class="btn-secondary">Explore Treatments</a>
             </div>
             <div class="trust-badges">
-                <div class="badge">Verified 5-Star Provider</div>
-                <div class="badge">Board-Certified Excellence</div>
-                <div class="badge">Premium Injectable Treatments</div>
+                <div class="trust-badge">
+                    <span>✨</span>
+                    <span>Board Certified</span>
+                </div>
+                <div class="trust-badge">
+                    <span>🏆</span>
+                    <span>5-Star Reviews</span>
+                </div>
+                <div class="trust-badge">
+                    <span>💫</span>
+                    <span>Expert Care Since 2019</span>
+                </div>
             </div>
         </div>
     </section>
@@ -561,137 +655,157 @@
     <section id="sage" class="sage-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title serif">Meet Sage, Your Personal Beauty Advisor</h2>
-                <p class="section-subtitle">Get instant, expert guidance on treatments, pricing, and scheduling - available 24/7</p>
+                <h2 class="section-title serif">Meet Sage, Your AI Beauty Consultant</h2>
+                <p class="section-subtitle">Get instant expert guidance, photo consultations, and personalized treatment recommendations 24/7</p>
             </div>
             <div class="sage-content">
-                <div class="sage-info">
-                    <h3 class="serif">Your Beauty Journey Starts Here</h3>
-                    <p>Sage is your intelligent beauty consultant, trained specifically on Dr. Bachilo's treatments and expertise. Get personalized recommendations, real-time pricing, and instant booking assistance.</p>
-                    <div class="sage-chips">
-                        <span class="chip">📸 Photo Consultation</span>
-                        <span class="chip">🌙 24/7 Availability</span>
-                        <span class="chip">💎 Treatment Guidance</span>
-                        <span class="chip">📅 Instant Booking</span>
+                <div class="sage-features">
+                    <div class="feature-chip">
+                        <div class="feature-icon">📸</div>
+                        <div class="feature-text">
+                            <h3>Photo Consultation</h3>
+                            <p>Upload your photo for instant aesthetic analysis and treatment recommendations</p>
+                        </div>
                     </div>
-                    <p>Start your conversation below and discover your perfect treatment plan today.</p>
+                    <div class="feature-chip">
+                        <div class="feature-icon">🕒</div>
+                        <div class="feature-text">
+                            <h3>24/7 Availability</h3>
+                            <p>Get expert answers to your beauty questions anytime, day or night</p>
+                        </div>
+                    </div>
+                    <div class="feature-chip">
+                        <div class="feature-icon">💎</div>
+                        <div class="feature-text">
+                            <h3>Treatment Guidance</h3>
+                            <p>Discover which procedures and treatments are perfect for your goals</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="sage-embed">
-                    <iframe src="https://paymegpt.com/agents/225/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+                    <iframe src="https://paymegpt.com/agents/233/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title serif">Premium Aesthetic Treatments</h2>
-                <p class="section-subtitle">Discover our comprehensive range of advanced cosmetic treatments designed to enhance your natural beauty</p>
+                <h2 class="section-title serif">Signature Treatments</h2>
+                <p class="section-subtitle">Discover our comprehensive range of aesthetic treatments designed to enhance your natural beauty</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop&auto=format')"></div>
                     <div class="service-content">
                         <h3>Botox & Dysport</h3>
-                        <p>Smooth away fine lines and wrinkles with our premium neurotoxin treatments. Achieve a refreshed, youthful appearance with minimal downtime.</p>
+                        <p>Smooth away fine lines and wrinkles with our premium neuromodulator treatments for a refreshed, youthful appearance.</p>
+                        <div class="service-price">Starting at $12/unit</div>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=400&h=300&fit=crop&auto=format')"></div>
                     <div class="service-content">
                         <h3>Dermal Fillers</h3>
-                        <p>Restore volume and enhance facial contours with Juvederm, Restylane, and other premium filler brands for natural-looking results.</p>
+                        <p>Restore volume and enhance facial contours with Juvederm, Restylane, and Radiesse for natural-looking results.</p>
+                        <div class="service-price">Starting at $650/syringe</div>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391004831-0ab97db7ddd3?w=400&h=300&fit=crop&auto=format')"></div>
                     <div class="service-content">
-                        <h3>Sculptra & Radiesse</h3>
-                        <p>Stimulate natural collagen production for long-lasting facial rejuvenation and enhanced skin texture with these advanced treatments.</p>
+                        <h3>Sculptra</h3>
+                        <p>Stimulate natural collagen production for gradual, long-lasting volume restoration and skin rejuvenation.</p>
+                        <div class="service-price">Starting at $850/vial</div>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391004742-5ad32b8b176a?w=400&h=300&fit=crop&auto=format')"></div>
                     <div class="service-content">
-                        <h3>Microneedling & PRP</h3>
-                        <p>Rejuvenate your skin with advanced microneedling combined with platelet-rich plasma for improved texture and radiance.</p>
+                        <h3>Microneedling with PRP</h3>
+                        <p>Combine microneedling with platelet-rich plasma to improve skin texture, tone, and overall radiance.</p>
+                        <div class="service-price">Starting at $350/session</div>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391004870-8f9b84de8b12?w=400&h=300&fit=crop&auto=format')"></div>
                     <div class="service-content">
                         <h3>HydraFacial</h3>
-                        <p>Experience the ultimate in skin hydration and rejuvenation with our signature HydraFacial treatment for immediate, glowing results.</p>
+                        <p>Experience the ultimate 3-in-1 facial treatment that cleanses, extracts, and hydrates for instantly glowing skin.</p>
+                        <div class="service-price">Starting at $175/session</div>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391004831-35ad22db7ddd?w=400&h=300&fit=crop&auto=format')"></div>
                     <div class="service-content">
-                        <h3>Comprehensive Consultations</h3>
-                        <p>Personalized treatment planning with Dr. Bachilo to create your ideal aesthetic journey tailored to your unique goals and features.</p>
+                        <h3>Comprehensive Consultation</h3>
+                        <p>Personalized treatment planning with Dr. Bachilo to create your customized beauty enhancement journey.</p>
+                        <div class="service-price">Complimentary</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof Section -->
-    <section class="social-proof">
+    <!-- Social Proof -->
+    <section class="reviews-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title serif">What Our Clients Say</h2>
-                <p class="section-subtitle">Discover why patients choose Glamour Plastic Surgery for their aesthetic treatments</p>
+                <p class="section-subtitle">Real experiences from real clients who trust us with their aesthetic goals</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"Dr. Bachilo is absolutely amazing! Her expertise with Botox and fillers is unmatched. I always leave feeling confident and beautiful. The results look so natural, everyone asks what I'm doing differently."</p>
-                    <div class="reviewer">Sarah M.</div>
+                    <p class="review-text">"Where do I start! This business has some of the best five star customer service representatives you'll find anywhere!!! I never once felt rushed throughout my consultation. I never once felt pressured to commit to any particular treatment. I was given a clear understanding of my options."</p>
+                    <div class="reviewer-name">Sarah M.</div>
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"The HydraFacial treatments here are incredible. My skin has never looked better! The staff is professional, the facility is beautiful, and Dr. Bachilo truly cares about achieving the best results."</p>
-                    <div class="reviewer">Jennifer L.</div>
+                    <p class="review-text">"My wife recently had a procedure with Dr Bachilo and it was incredible. Jill, who assists Dr Bachilo, kept us informed from the beginning until the end. There has not been a bad moment and we always feel welcome when we arrive. The staff here is not only professional but caring."</p>
+                    <div class="reviewer-name">Michael R.</div>
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"I've been coming to Glamour for over two years now. The Sculptra treatments have completely transformed my face - I look years younger. Dr. Bachilo's artistic eye is phenomenal."</p>
-                    <div class="reviewer">Maria R.</div>
+                    <p class="review-text">"I had a wonderful experience at Glamour Plastic Surgery and Med Spa. From my very first consultation, Dr. Olga Bachilo and Jill Stewart made me feel comfortable, informed, and supported. They took the time to answer all of my questions thoroughly and guided me through each step."</p>
+                    <div class="reviewer-name">Jennifer L.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section class="team">
+    <section class="team-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title serif">Meet Dr. Bachilo</h2>
-                <p class="section-subtitle">Experience the expertise of Houston's premier aesthetic specialist</p>
+                <p class="section-subtitle">Your trusted partner in aesthetic excellence</p>
             </div>
             <div class="team-content">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&auto=format" alt="Dr. Bachilo" class="team-image" style="object-fit: contain; background: #f5f2ee;">
+                <div class="team-image"></div>
                 <div class="team-info">
                     <h3 class="serif">Dr. Olga Bachilo</h3>
-                    <div class="title">Board-Certified Aesthetic Specialist</div>
-                    <p>Dr. Bachilo brings years of expertise in advanced aesthetic treatments, specializing in injectable therapies and non-surgical facial rejuvenation. Her artistic approach and commitment to natural-looking results have made her one of Houston's most sought-after practitioners.</p>
-                    <p>With extensive training in the latest techniques and a dedication to patient safety and satisfaction, Dr. Bachilo creates personalized treatment plans that enhance each patient's unique beauty while maintaining their natural expressions.</p>
-                    <p>Her expertise spans the full range of injectable treatments, from Botox and dermal fillers to advanced procedures like Sculptra and PRP therapy, ensuring comprehensive care for all your aesthetic needs.</p>
+                    <div class="team-title">Board-Certified Aesthetic Specialist</div>
+                    <p class="team-bio">Dr. Bachilo brings years of expertise and artistry to every treatment, combining medical precision with an aesthetic eye to help you achieve your beauty goals. Her commitment to natural-looking results and patient comfort has made her one of Houston's most trusted aesthetic physicians.</p>
+                    <div class="credentials">
+                        <div class="credential-badge">Board Certified</div>
+                        <div class="credential-badge">Aesthetic Medicine</div>
+                        <div class="credential-badge">Advanced Injector</div>
+                        <div class="credential-badge">Patient Safety Focused</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="book" class="cta-section">
+    <!-- Final CTA -->
+    <section class="final-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="serif">Ready to Begin Your Transformation?</h2>
-                <p>Schedule your personalized consultation with Dr. Bachilo and discover the treatments that will help you look and feel your absolute best.</p>
-                <a href="tel:(713) 766-4643" class="btn btn-primary">Call (713) 766-4643</a>
-            </div>
+            <h2 class="serif">Ready to Begin Your Transformation?</h2>
+            <p>Schedule your personalized consultation with Dr. Bachilo and discover the treatments that will help you look and feel your absolute best.</p>
+            <a href="tel:(713) 766-4643" class="btn-primary" style="background: var(--white); color: var(--primary);">Call (713) 766-4643 Now</a>
         </div>
     </section>
 
@@ -700,37 +814,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Contact Information</h4>
+                    <h3>Contact Information</h3>
                     <p>6300 West Loop South Freeway #620<br>Bellaire, TX</p>
-                    <a href="tel:(713) 766-4643">(713) 766-4643</a>
-                    <a href="mailto:olgabachilomd@gmail.com">olgabachilomd@gmail.com</a>
+                    <p>Phone: <a href="tel:(713) 766-4643">(713) 766-4643</a></p>
+                    <p>Email: <a href="mailto:olgabachilomd@gmail.com">olgabachilomd@gmail.com</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="#services">Botox & Dysport</a>
-                    <a href="#services">Dermal Fillers</a>
-                    <a href="#services">Sculptra & Radiesse</a>
-                    <a href="#services">Microneedling & PRP</a>
-                    <a href="#services">HydraFacial</a>
+                    <h3>Services</h3>
+                    <p><a href="#services">Botox & Dysport</a></p>
+                    <p><a href="#services">Dermal Fillers</a></p>
+                    <p><a href="#services">Sculptra</a></p>
+                    <p><a href="#services">Microneedling</a></p>
+                    <p><a href="#services">HydraFacial</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4>Follow Us</h4>
+                    <h3>Follow Us</h3>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/glamourplasticsurgery/" target="_blank">📷</a>
-                        <a href="https://www.facebook.com/GlamourPlasticSurgery/" target="_blank">📘</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Hours</h4>
-                    <p>Monday - Friday: 9AM - 6PM<br>
-                    Saturday: By Appointment<br>
-                    Sunday: Closed</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Glamour Plastic Surgery and Med Spa. All rights reserved. | Powered by Lumière Systems</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                        <a href="https://www.instagram.com/glamourplasticsurgery/" class="social-link">📷</a>
+                        <a href="https://www.facebook.com/GlamourPl
