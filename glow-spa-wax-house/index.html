@@ -2,107 +2,241 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Glow Spa & Wax House</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+<title>Glow Spa & Wax House — https://www.linkedin.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Libre Baskerville',serif;background:#12171e;color:#e8ddd0;line-height:1.6}a{color:inherit;text-decoration:none}
-header{background:#161d26;padding:0 40px;height:72px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.3)}
-.brand{font-size:1.2rem;font-weight:600}.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
-.hdr-r a{opacity:0.7}.hdr-r a:hover{opacity:1;color:#b07d5c}
-.nav-btn{background:#b07d5c;color:#fff!important;opacity:1!important;padding:9px 20px;border-radius:3px;font-weight:500;font-size:13px}
-.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 40px;background:linear-gradient(160deg,#12171e,#161d26)}
-h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.1;margin-bottom:20px}h1 em{font-style:italic;color:#b07d5c}
-.sub{font-size:1.1rem;opacity:0.65;margin-bottom:40px;max-width:520px;font-weight:300;line-height:1.8}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.btn{padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
-.btn-p{background:#b07d5c;color:#fff}.btn-p:hover{opacity:0.9;transform:translateY(-1px)}
-.btn-o{background:transparent;color:#e8ddd0;border:1px solid #e8ddd030}.btn-o:hover{border-color:#b07d5c;color:#b07d5c}
-.badges{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:12px;opacity:0.45;letter-spacing:1.5px;text-transform:uppercase}
-.badges span::before{content:'— ';color:#b07d5c}
-.sage-sec{padding:100px 40px;background:#161d26}
-.sage-inner{max-width:920px;margin:0 auto;text-align:center}
-.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#b07d5c;margin-bottom:16px}
-h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:300;margin-bottom:16px;line-height:1.2}h2 em{font-style:italic;color:#b07d5c}
-.sage-sub{font-size:1rem;opacity:0.65;margin-bottom:40px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.9}
-.feats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.feat{padding:10px 18px;border:1px solid #b07d5c40;border-radius:2px;font-size:13px;color:#b07d5c;background:#b07d5c10}
-.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.4)}
-.svc-sec{padding:100px 40px;background:#161d26}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;max-width:1100px;margin:40px auto 0}
-.svc-card{background:#12171e80;padding:28px;border:1px solid #b07d5c15;border-radius:4px;transition:all 0.3s}
-.svc-card:hover{border-color:#b07d5c;transform:translateY(-3px)}
-.svc-icon{font-size:1.8rem;margin-bottom:12px}.svc-name{font-size:1.1rem;font-weight:600;margin-bottom:6px}.svc-desc{font-size:13px;opacity:0.55;line-height:1.6}
-.cta-sec{padding:80px 40px;text-align:center;background:#b07d5c15;border-top:1px solid #b07d5c25}
-h2.cta{margin-bottom:12px}.cta-p{opacity:0.65;margin-bottom:32px}
-footer{padding:40px;text-align:center;font-size:13px;opacity:0.4;border-top:1px solid #e8ddd010}
-footer a{margin:0 8px}.footer-links{margin-top:10px}
-.ft-bot{font-size:11px;margin-top:14px;opacity:0.3;letter-spacing:1px;text-transform:uppercase}
-@media(max-width:768px){header{padding:0 20px}.hero,.sage-sec,.svc-sec,.cta-sec{padding:60px 20px}.btns{flex-direction:column;align-items:center}}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+header{background:#fff;padding:0 48px;height:72px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
+.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
+.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
+.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.btn{padding:14px 32px;font-size:13px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
+.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px)}
+.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+.trust{display:flex;gap:20px;flex-wrap:wrap}
+.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
+.trust span::before{content:'-- ';color:var(--accent);opacity:1}
+.hero-r{position:relative;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
+.stat-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+.section{padding:100px 48px}
+.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
+h2 em{font-style:italic;color:var(--accent)}
+.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+.sage-inner{max-width:960px;margin:0 auto}
+.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
+.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
+.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
+.svc-body{padding:22px}
+.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
+.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
+.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
+.svc-link::after{content:' →'}
+.rev-section{background:var(--dark);color:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
+.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
+.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);max-width:480px}
+.team-photo-wrap{background:#f5f2ee;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
+.team-body{padding:24px}
+.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
+.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
+.cta-section h2{color:#fff;margin-bottom:12px}
+.cta-section p{opacity:0.85;margin-bottom:36px}
+.btn-light{background:#fff;color:var(--text);font-weight:600}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
+footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
+.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
+.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
+.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
 </style>
 </head>
 <body>
 <header>
-  <div class="brand"><img src="https://static.wixstatic.com/media/449f0a_69d79d2c36544532b5dcdef5ca0e76c4~mv2.png/v1/fill/w_215,h_215,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Glow%20Spa%20and%20Wax%20House%20Logo%202024.png" style="height:36px;object-fit:contain;" alt="Glow Spa & Wax House" onerror="this.style.display='none'"></div>
+  <div class="brand-name">
+    <img src="https://static.wixstatic.com/media/449f0a_69d79d2c36544532b5dcdef5ca0e76c4~mv2.png/v1/fill/w_215,h_215,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Glow%20Spa%20and%20Wax%20House%20Logo%202024.png" style="height:40px;object-fit:contain" alt="Glow Spa & Wax House" onerror="this.outerHTML='Glow Spa & Wax House'">
+  </div>
   <div class="hdr-r">
     <a href="tel:5128401080">(512) 840-1080</a>
-    <a href="#sage" class="nav-btn">Chat with Sage</a>
+    <a href="#sage">Meet Sage</a>
+    <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ" class="hdr-cta">Book Now</a>
   </div>
 </header>
+
 <section class="hero">
-  <div>
-    <h1>Look and Feel Your <em>Absolute Best</em></h1>
-    <p class="sub">Personalized aesthetic treatments tailored just for you in https://www.linkedin.com/company/glow-spa-and-wax-house-llc. Expert care, natural-looking results.</p>
+  <div class="hero-l">
+    <div class="eyebrow">https://www.linkedin.com &middot; Aesthetic Excellence</div>
+    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
+    <p class="hero-sub">Expert aesthetic treatments personalized to you. Proudly serving https://www.linkedin.com.</p>
     <div class="btns">
-      <a href="tel:5128401080" class="btn btn-p">Call (512) 840-1080</a>
-      <a href="#sage" class="btn btn-o">Chat with Sage →</a>
+      <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ" class="btn btn-p">Book Consultation</a>
+      <a href="#sage" class="btn btn-o">Chat with Sage</a>
     </div>
-    <div class="badges"><span>Board Certified</span><span>Free Consultations</span><span>24/7 Concierge</span></div>
+    <div class="trust">
+      <span>Board Certified</span><span>Natural Results</span><span>Free Consults</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img class="hero-img" src="https://static.wixstatic.com/media/449f0a_b03104c11427483e9857ea65d956caa6~mv2.jpg/v1/fill/w_2500,h_1785,al_c/449f0a_b03104c11427483e9857ea65d956caa6~mv2.jpg" alt="Glow Spa & Wax House" onerror="this.style.background='#f0e8d8'">
   </div>
 </section>
-<section class="sage-sec" id="sage">
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
+  <div class="stat-item"><div class="stat-num">5&#9733;</div><div class="stat-label">Client Rated</div></div>
+  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
+</div>
+
+<section class="section" id="sage" style="background:var(--bg)">
   <div class="sage-inner">
-    <div class="sec-label">Your AI Concierge — Available 24/7</div>
-    <h2>Meet Sage —<br>Your Personal <em>Aesthetic Guide</em></h2>
-    <p class="sage-sub">Not sure which treatment is right for you? Sage can help you explore options, answer questions, and even take a look at a photo for personalised talking points before your consultation. No pressure — just helpful.</p>
+    <div class="sec-label">Available 24/7</div>
+    <h2>Meet Sage &mdash;<br><em>Your Aesthetic Guide</em></h2>
+    <p class="sec-sub">Sage knows every service at Glow Spa & Wax House. Ask anything, explore your options, or upload a photo for personalized talking points before your consultation.</p>
     <div class="feats">
-      <div class="feat">📸 Photo Consultation</div>
-      <div class="feat">💬 Treatment Guidance</div>
-      <div class="feat">📅 Easy Booking</div>
-      <div class="feat">🌙 Available 24/7</div>
+      <div class="feat">&#128248; Photo Analysis</div>
+      <div class="feat">&#128172; Treatment Guidance</div>
+      <div class="feat">&#128197; Book Consultation</div>
+      <div class="feat">&#127777; Available 24/7</div>
     </div>
     <div class="chat-wrap">
-      <iframe src="https://paymegpt.com/agents/211/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+      <iframe src="https://paymegpt.com/agents/257/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
       <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
     </div>
   </div>
 </section>
-<section class="svc-sec">
-  <h2 style="text-align:center">Our Services</h2>
+
+<section class="section" style="background:#fff">
+  <div class="sec-label">Treatments</div>
+  <h2>Our <em>Services</em></h2>
   <div class="svc-grid">
-    <div class="svc-card"><div class="svc-icon">💉</div><div class="svc-name">Botox & Dysport</div><div class="svc-desc">Smooth fine lines with precise, natural-looking neurotoxin treatments.</div></div>
-    <div class="svc-card"><div class="svc-icon">✨</div><div class="svc-name">Dermal Fillers</div><div class="svc-desc">Restore volume, enhance lips, and contour beautifully.</div></div>
-    <div class="svc-card"><div class="svc-icon">🔆</div><div class="svc-name">Laser & IPL</div><div class="svc-desc">Advanced treatments for skin rejuvenation and hair removal.</div></div>
-    <div class="svc-card"><div class="svc-icon">💧</div><div class="svc-name">Facials & Peels</div><div class="svc-desc">Deep cleansing, exfoliation, and rejuvenation for glowing skin.</div></div>
-    <div class="svc-card"><div class="svc-icon">⚡</div><div class="svc-name">Microneedling</div><div class="svc-desc">Stimulate collagen for firmer, more youthful skin.</div></div>
-    <div class="svc-card"><div class="svc-icon">🏃</div><div class="svc-name">Medical Weight Loss</div><div class="svc-desc">Physician-supervised programs for sustainable results.</div></div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&auto=format" alt="Botox" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Botox</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&auto=format" alt="PRP" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">PRP</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop&auto=format" alt="Laser" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Laser</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&auto=format" alt="Breast" loading="lazy" onerror="this.style.background='#f0e8d8'">
+      <div class="svc-body">
+        <div class="svc-tag">Treatment</div>
+        <div class="svc-name">Breast</div>
+        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
+        <a href="#sage" class="svc-link">Ask Sage</a>
+      </div>
+    </div></div>
+</section>
+
+<section class="section rev-section">
+  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
+  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"The results were incredible — I look 10 years younger and feel completely natural."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"Best medspa experience I have had. The team is so professional and genuinely cares."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rev-text">"I have been to several medspas but this one is on another level. Worth every penny."</div>
+      <div class="rev-author">Verified Client &middot; Google</div>
+    </div></div>
+</section>
+
+
+
+<section class="cta-section">
+  <h2>Ready to Look Your Best?</h2>
+  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
+  <div class="btns" style="justify-content:center">
+    <a href="#sage" class="btn btn-light">Talk to Sage</a>
+    <a href="tel:5128401080" class="btn btn-ghost">Call (512) 840-1080</a>
   </div>
 </section>
-<section class="cta-sec">
-  <h2 class="cta">Ready to Look and Feel Your Best?</h2>
-  <p class="cta-p">Chat with Sage for instant guidance, or call our team to schedule your consultation.</p>
-  <div class="btns">
-    <a href="#sage" class="btn btn-p">Talk to Sage</a>
-    <a href="tel:5128401080" class="btn btn-o">Call (512) 840-1080</a>
-  </div>
-</section>
+
 <footer>
-  <div>Glow Spa & Wax House — https://www.linkedin.com/company/glow-spa-and-wax-house-llc</div>
-  <div class="footer-links">
-    <a href="tel:5128401080">📞 (512) 840-1080</a>
-    <a href="mailto:austinglowspa@gmail.com">✉️ austinglowspa@gmail.com</a>
+  <div>
+    <p class="ft-tagline">Glow Spa and Wax House is a spa and waxing salon in Austin, TX. 
+Offering men</p>
+    <div class="ft-contact">
+      7739 Northcross Dr"},"telephone":"512-840-1080"}<br>
+      https://www.linkedin.com<br>
+      <a href="tel:5128401080">(512) 840-1080</a><br>
+      <a href="mailto:austinglowspa@gmail.com">austinglowspa@gmail.com</a>
+    </div>
   </div>
-  <div class="ft-bot">Powered by Lumière Systems</div>
+  <div>
+    <div class="ft-title">Treatments</div>
+    <div class="ft-links"><a href="#sage">Botox</a><a href="#sage">PRP</a><a href="#sage">Laser</a><a href="#sage">Breast</a></div>
+  </div>
+  <div>
+    <div class="ft-title">Connect</div>
+    <div class="ft-contact">
+      <a href="https://www.instagram.com/glowspaandwaxhouse" target="_blank">Instagram &rarr;</a><br>
+      <a href="https://www.facebook.com/austinglowspa/"  target="_blank">Facebook &rarr;</a><br>
+      <a href="https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVI8EyZ48PoIT7oA12k7NxELY6przIuiCGPvL2WQ6qG7QRTJ5oOcwiFe0dx1w/t8bIsmRrXQczdWmqxuXLvAYvpV84WQLhetQmPqU6I2SRwT7JruOqrPH3QXNdj50Q/mzBqTtI3qtlzecK2+1h5onFmtwvr5KOAumLMjJdQOTrxMmo++ILDUR4NlMikQb2tt9IGYDo8uTsKIp58QfSoysvFIT967D3sIOV8OvuYC5ABh0KhOY9e7lVMievotE1BrPeaEZHE7eH14/XU4aiewHPYX3utVkcVtZuuA5DFCXyfuGkzwm+3tAg8uf+Yxobd38uPLTyl+c2sfuttYkIPeNf6+T1CV+pIZNXExpJ/5wDhQjteXEW0DLHgMe095l8yFPmMfvKQ/FlMEOr6OXzYDvbiNJKQFzZ4z7EuTaRBFyoYaM1zClFifFCpjGaQNzgWFOTpO98Wart3o7ux4iZGmf88soSTCC3HZRJTyZdcgMagMJ"   target="_blank">Book Online &rarr;</a>
+    </div>
+  </div>
 </footer>
+<div class="ft-bot">
+  <span>&copy; Glow Spa & Wax House &mdash; https://www.linkedin.com</span>
+  <span>Powered by Lumi&egrave;re Systems</span>
+</div>
 </body>
 </html>
