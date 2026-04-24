@@ -1,313 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Renew Med Spa</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--accent:#007cba;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5;--nav:#fff}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renew Med Spa - Georgetown, TX | Aesthetic Treatments & Wellness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header{background:var(--nav);padding:0 48px;height:74px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{height:44px;object-fit:contain}
-.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
-.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
-.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
-.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px;letter-spacing:0.3px}
-.hdr-cta:hover{background:#333!important}
+        :root {
+            --primary: #007cba;
+            --primary-dark: #005a8a;
+            --primary-light: #e6f4ff;
+            --secondary: #8b7355;
+            --accent: #d4af37;
+            --text-dark: #2d3748;
+            --text-gray: #4a5568;
+            --text-light: #718096;
+            --background: #fefefe;
+            --cream: #f5f2ee;
+            --white: #ffffff;
+        }
 
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
-.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
-.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
-h1 em{font-style:italic;color:var(--accent)}
-.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
-.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-.btn{padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
-.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px);opacity:0.9}
-.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
-.trust{display:flex;gap:20px;flex-wrap:wrap}
-.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
-.trust span::before{content:'— ';color:var(--accent);opacity:1}
-.hero-r{position:relative;overflow:hidden}
-.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,248,245,0.3),transparent)}
+        body {
+            font-family: 'Jost', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
 
-.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
-.stat-item{text-align:center}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
-.stat-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
 
-.section{padding:100px 48px}
-.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
-h2 em{font-style:italic;color:var(--accent)}
-.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.sage-inner{max-width:960px;margin:0 auto}
-.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.feat{padding:10px 18px;border:1px solid rgba(0,124,186,0.3);border-radius:2px;font-size:13px;background:rgba(0,124,186,0.06)}
-.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0, 124, 186, 0.1);
+        }
 
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(0,124,186,0.2)}
-.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
-.svc-body{padding:22px}
-.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
-.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
-.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
-.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
-.svc-link::after{content:' →'}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.rev-section{background:var(--dark);color:#fff}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
-.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
-.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
-.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+        .logo img {
+            height: 50px;
+            object-fit: contain;
+        }
 
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;max-width:900px}
-.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
-.team-photo-wrap{background:#f5f2ee;display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden}
-.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
-.team-body{padding:24px}
-.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
-.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
-.cta-section h2{color:#fff;margin-bottom:12px}
-.cta-section p{opacity:0.85;margin-bottom:36px;font-size:1rem}
-.btn-light{background:#fff;color:var(--text);font-weight:600}
-.btn-light:hover{background:#f5f5f5}
-.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
-.btn-ghost:hover{background:rgba(255,255,255,0.15)}
+        .phone-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
 
-footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
-.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
-.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
-.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
-.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
-@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
-</style>
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--cream) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero-text h1 .italic {
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .hero-image {
+            background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600') center/cover;
+            height: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 124, 186, 0.2);
+        }
+
+        /* Sage AI Section */
+        .sage-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .sage-content {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sage-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .sage-content p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .feature-chips {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .chip {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sage-embed {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 124, 186, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .service-content p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--cream);
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .review-stars {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: var(--primary-light);
+        }
+
+        .team-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .team-image {
+            background: var(--cream);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .team-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .team-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-section p, .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 20px;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px 0;
+            }
+
+            .hero {
+                margin-top: 120px;
+                padding: 60px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .section-header h2,
+            .hero-text h1,
+            .team-info h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://www.renewmedspatx.com/wp-content/uploads/2022/12/cropped-logo.png.webp" alt="Renew Med Spa">
+                </div>
+                <div class="header-actions">
+                    <a href="tel:+15124137960" class="phone-link">(512) 413-7960</a>
+                    <a href="#sage" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <div class="brand">
-    <img class="brand-logo" src="https://www.renewmedspatx.com/wp-content/uploads/2022/12/cropped-logo.png.webp" alt="Renew Med Spa" onerror="this.style.display='none'">
-    <span class="brand-name">Renew Med Spa</span>
-  </div>
-  <div class="hdr-r">
-    <a href="tel:5124137960">(512) 413-7960</a>
-    <a href="#sage">Meet Sage</a>
-    <a href="tel:5124137960" target="_blank" class="hdr-cta">Book Now</a>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="serif">Your <span class="italic">Transformation</span> Begins Here</h1>
+                    <p>Experience world-class aesthetic treatments and wellness solutions at Georgetown's premier med spa. Dr. Petrik and our expert team are dedicated to helping you look and feel your absolute best.</p>
+                    <div class="hero-actions">
+                        <a href="#sage" class="btn btn-primary">Start Your Journey</a>
+                        <a href="tel:+15124137960" class="btn btn-outline">Call Today</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <span>✓</span>
+                            <span>Board-Certified Provider</span>
+                        </div>
+                        <div class="badge">
+                            <span>✓</span>
+                            <span>Georgetown's Trusted Med Spa</span>
+                        </div>
+                        <div class="badge">
+                            <span>✓</span>
+                            <span>Personalized Care</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image"></div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-l">
-    <div class="eyebrow">Premier Med Spa · Aesthetic Excellence</div>
-    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
-    <p class="hero-sub">Expert aesthetic treatments personalized to you. Natural-looking results, led by Dr. Petrik.</p>
-    <div class="btns">
-      <a href="tel:5124137960" target="_blank" class="btn btn-p">Book Consultation</a>
-      <a href="#sage" class="btn btn-o">Chat with Sage →</a>
-    </div>
-    <div class="trust">
-      <span>Board Certified</span>
-      <span>Natural Results</span>
-      <span>Free Consults</span>
-      <span>(512) 413-7960</span>
-    </div>
-  </div>
-  <div class="hero-r">
-    <img class="hero-img" src="jpg" alt="Renew Med Spa" onerror="this.style.background='#f0e8d8'">
-    <div class="hero-overlay"></div>
-  </div>
-</section>
+    <!-- Sage AI Section -->
+    <section id="sage" class="sage-section">
+        <div class="container">
+            <div class="sage-content">
+                <h2 class="serif">Meet Sage, Your Personal Aesthetic Assistant</h2>
+                <p>Get instant answers about our services, pricing, and schedule your appointment with our AI-powered assistant.</p>
+                <div class="feature-chips">
+                    <span class="chip">Instant Scheduling</span>
+                    <span class="chip">Treatment Recommendations</span>
+                    <span class="chip">Pricing Information</span>
+                    <span class="chip">24/7 Available</span>
+                </div>
+            </div>
+            <div class="sage-embed">
+                <iframe src="https://paymegpt.com/agents/256/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+            </div>
+        </div>
+    </section>
 
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
-  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
-  <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Client Rated</div></div>
-  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
-</div>
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">Comprehensive Aesthetic & Wellness Services</h2>
+                <p>Transform your appearance and enhance your well-being with our advanced treatments</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400')"></div>
+                    <div class="service-content">
+                        <h3 class="serif">Dermal Fillers</h3>
+                        <p>Restore volume and smooth wrinkles with our premium dermal filler treatments for natural-looking results.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=400')"></div>
+                    <div class="service-content">
+                        <h3 class="serif">Microneedling</h3>
+                        <p>Stimulate collagen production and improve skin texture with our advanced microneedling treatments.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400')"></div>
+                    <div class="service-content">
+                        <h3 class="serif">Laser Treatments</h3>
+                        <p>Address various skin concerns with our state-of-the-art laser technology for rejuvenated skin.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400')"></div>
+                    <div class="service-content">
+                        <h3 class="serif">Dermaplaning</h3>
+                        <p>Achieve smooth, radiant skin with our professional dermaplaning treatments for immediate glow.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400')"></div>
+                    <div class="service-content">
+                        <h3 class="serif">Weight Loss Solutions</h3>
+                        <p>Comprehensive weight management programs tailored to help you achieve your health and wellness goals.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400')"></div>
+                    <div class="service-content">
+                        <h3 class="serif">Semaglutide Therapy</h3>
+                        <p>Innovative weight loss treatment with proven results for sustainable weight management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="sage" style="background:var(--bg)">
-  <div class="sage-inner">
-    <div class="sec-label">Available 24/7</div>
-    <h2>Meet Sage —<br><em>Your Aesthetic Guide</em></h2>
-    <p class="sec-sub">Not sure which treatment is right for you? Sage knows every service, every price, and every option at Renew Med Spa. Upload a photo for personalized talking points before your consultation — no pressure, just helpful.</p>
-    <div class="feats">
-      <div class="feat">📸 Photo Analysis</div>
-      <div class="feat">💬 Treatment Guidance</div>
-      <div class="feat">📅 Book Consultation</div>
-      <div class="feat">💊 Ask About Pricing</div>
-      <div class="feat">🌙 Always Available</div>
-    </div>
-    <div class="chat-wrap">
-      <iframe src="https://paymegpt.com/agents/229/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
-    </div>
-  </div>
-</section>
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">What Our Clients Say</h2>
+                <p>Real experiences from our valued clients in Georgetown and surrounding areas</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Dr. Petrik and her team are absolutely amazing! I've been getting filler treatments here for over a year and the results are always natural and beautiful. The staff makes you feel so comfortable and welcomed."</p>
+                    <div class="review-author">- Sarah M.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best med spa in Georgetown! I started the weight loss program with Semaglutide and have lost 30 pounds. The entire team is supportive and professional. Highly recommend Renew Med Spa!"</p>
+                    <div class="review-author">- Jennifer L.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The microneedling treatments have transformed my skin! I can't believe how much smoother and brighter my complexion looks. Dr. Petrik really knows what she's doing. Thank you for giving me my confidence back!"</p>
+                    <div class="review-author">- Maria R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section services-sec" style="background:#fff">
-  <div class="sec-label">Treatments</div>
-  <h2>Our <em>Services</em></h2>
-  <div class="svc-grid">
-    
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&auto=format" alt="Filler" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Filler</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&auto=format" alt="Microneedling" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Microneedling</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&h=400&fit=crop&auto=format" alt="Laser" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Laser</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=400&fit=crop&auto=format" alt="RF" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">RF</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=400&fit=crop&auto=format" alt="Dermaplaning" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Dermaplaning</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&h=400&fit=crop&auto=format" alt="Weight Loss" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Weight Loss</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="team-content">
+                <div class="team-image">
+                    <img src="https://www.renewmedspatx.com/wp-content/uploads/2023/10/staff-bg-1.jpg" alt="Renew Med Spa Team">
+                </div>
+                <div class="team-info">
+                    <h2 class="serif">Expert Care You Can Trust</h2>
+                    <h3>Led by Dr. Petrik</h3>
+                    <p>At Renew Med Spa, we believe that everyone deserves to feel confident and beautiful in their own skin. Our experienced team, led by Dr. Petrik, is dedicated to providing personalized aesthetic and wellness treatments in a comfortable, welcoming environment.</p>
+                    <p>We stay at the forefront of aesthetic medicine, using only the latest techniques and highest quality products to ensure you receive the best possible results.</p>
+                    <p>Your transformation journey is unique, and we're here to guide you every step of the way with expertise, care, and genuine concern for your wellbeing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section rev-section">
-  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
-  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
-  <div class="rev-grid">
-    
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">">
-/* <![CDATA[ */
-var gform;gform||(document.addEventListener("</div>
-      <div class="rev-author">Verified Client</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">",function(){gform.scriptsLoaded=!0}),document.addEventListener("</div>
-      <div class="rev-author">Verified Client</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("</div>
-      <div class="rev-author">Verified Client</div>
-    </div>
-  </div>
-</section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="serif">Ready to Begin Your Transformation?</h2>
+            <p>Schedule your consultation today and discover why Georgetown trusts Renew Med Spa for their aesthetic and wellness needs.</p>
+            <a href="#sage" class="btn btn-white">Book Your Consultation</a>
+        </div>
+    </section>
 
-
-<section class="section" style="background:var(--bg)">
-  <div class="sec-label">Our Team</div>
-  <h2>Expert Care. <em>Personal Touch.</em></h2>
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="team-photo-wrap">
-        <img class="team-photo" src="jpg" alt="Dr. Petrik" onerror="this.parentElement.style.minHeight='200px'">
-      </div>
-      <div class="team-body">
-        <div class="team-role">Lead Provider</div>
-        <div class="team-name">Dr. Petrik</div>
-        <div class="team-bio">Our experienced team of licensed aesthetic professionals is dedicated to delivering personalized, natural-looking results. We combine the latest techniques with a patient-first approach to help you look and feel your absolute best.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <h2>Ready to Look Your Best?</h2>
-  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
-  <div class="btns" style="justify-content:center">
-    <a href="#sage" class="btn btn-light">Talk to Sage</a>
-    <a href="tel:5124137960" class="btn btn-ghost">Call (512) 413-7960</a>
-    <a href="tel:5124137960" target="_blank" class="btn btn-ghost">Book Now</a>
-  </div>
-</section>
-
-<footer>
-  <div>
-    <img src="https://www.renewmedspatx.com/wp-content/uploads/2022/12/cropped-logo.png.webp" style="height:36px;object-fit:contain;margin-bottom:16px;filter:brightness(0) invert(1);opacity:0.6" alt="Renew Med Spa" onerror="this.style.display='none'">
-    <p class="ft-tagline">Personalized aesthetic treatments delivered by licensed professionals. Natural-looking results, expert care.</p>
-    <div class="ft-contact">
-      4859 Williams Drive, Suite 111"
-		    },
-		    "openingHours": "Monda<br>
-      
-      <a href="tel:5124137960">(512) 413-7960</a><br>
-      <a href="mailto:renewmedspagt@gmail.com">renewmedspagt@gmail.com</a><br>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Treatments</div>
-    <div class="ft-links">
-      <a href="#sage">Filler</a><a href="#sage">Microneedling</a><a href="#sage">Laser</a><a href="#sage">RF</a><a href="#sage">Dermaplaning</a><a href="#sage">Weight Loss</a>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Connect</div>
-    <div class="ft-contact">
-      <a href="https://www.instagram.com/renewmedspageorgetown/" target="_blank">Instagram →</a><br>
-      <a href="https://www.facebook.com/RenewMedSpaTX/" target="_blank">Facebook →</a><br>
-      
-    </div>
-  </div>
-</footer>
-<div class="ft-bot">
-  <span>© Renew Med Spa</span>
-  <span>Powered by Lumière Systems</span>
-</div>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>4859 Williams Drive, Suite 111<br>Georgetown, TX</p>
+                    <a href="tel:+15124137960">(512) 413-7960</a>
+                    <a href="mailto:renewmedspagt@gmail.com">renewmedspagt@gmail.com</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">Dermal Fillers</a>
+                    <a href="#services">Microneedling</a>
+                    <a href="#services">Laser Treatments</a>
+                    <a href="#services">Dermaplaning</a>
+                    <a href="#services">Weight Loss</a>
+                    <a href="#services">Semaglutide</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/renewmedspageorgetown/" target="_blank">📷</a>
+                        <a href="https://www.facebook.com/RenewMedSpaTX/" target="_blank">📘</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Renew Med Spa. All rights reserved. | Powered by Lumière Systems</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
