@@ -3,127 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afterglow Medical Spa - Premium Aesthetic Treatments in Austin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Afterglow Medical Spa - Premier Aesthetic Treatments in Austin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
-            font-family: 'Jost', sans-serif;
-            line-height: 1.6;
-            color: #1a2744;
-            background: #ffffff;
+
+        :root {
+            --primary-color: #1a2744;
+            --secondary-color: #d4af37;
+            --accent-color: #f7f3e8;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --white: #ffffff;
+            --soft-gold: #f5f2ee;
         }
-        
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
-        .header {
+        header {
             position: fixed;
             top: 0;
-            width: 100%;
+            left: 0;
+            right: 0;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(26, 39, 68, 0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
-        
+
         .logo {
-            font-family: 'Cormorant', serif;
-            font-size: 32px;
-            font-weight: 600;
-            color: #1a2744;
-            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
         }
-        
+
         .header-right {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
-        
+
         .phone {
-            font-weight: 500;
-            color: #1a2744;
+            color: var(--primary-color);
             text-decoration: none;
+            font-weight: 600;
             font-size: 16px;
         }
-        
+
         .btn-primary {
-            background: linear-gradient(135deg, #1a2744 0%, #2d4366 100%);
+            background: linear-gradient(135deg, var(--secondary-color), #e6c146);
             color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 500;
+            padding: 12px 30px;
+            border-radius: 30px;
             text-decoration: none;
-            display: inline-block;
+            font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(26, 39, 68, 0.3);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
         }
-        
+
         .btn-secondary {
             background: transparent;
-            color: #1a2744;
-            padding: 12px 24px;
-            border: 2px solid #1a2744;
-            border-radius: 8px;
-            font-weight: 500;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
             text-decoration: none;
-            display: inline-block;
+            font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 16px;
         }
-        
+
         .btn-secondary:hover {
-            background: #1a2744;
+            background: var(--primary-color);
             color: white;
         }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(26, 39, 68, 0.9) 0%, rgba(45, 67, 102, 0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&h=900&fit=crop&auto=format') center/cover;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2a3f5f 100%);
             color: white;
+            padding: 120px 0 80px;
+            text-align: center;
             position: relative;
+            overflow: hidden;
         }
-        
-        .hero-content h1 {
-            font-family: 'Cormorant', serif;
-            font-size: 4rem;
-            font-weight: 600;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&auto=format') center/cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
         }
-        
-        .hero-content p {
+
+        .hero p {
             font-size: 1.3rem;
             margin-bottom: 40px;
             opacity: 0.9;
@@ -131,315 +153,286 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
-        .hero-ctas {
+
+        .hero-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
-        
+
         .trust-badges {
             display: flex;
             justify-content: center;
             gap: 40px;
-            opacity: 0.8;
+            margin-top: 60px;
         }
-        
-        .trust-badge {
-            text-align: center;
-        }
-        
-        .trust-badge-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+
+        .badge {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 10px;
-            font-size: 24px;
+            gap: 10px;
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
         }
-        
+
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
         /* Sage AI Section */
         .sage-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4f8 100%);
+            background: var(--accent-color);
         }
-        
-        .sage-intro {
+
+        .sage-header {
             text-align: center;
             margin-bottom: 60px;
         }
-        
-        .sage-intro h2 {
-            font-family: 'Cormorant', serif;
-            font-size: 3rem;
-            color: #1a2744;
+
+        .sage-header h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
-        
-        .sage-intro p {
+
+        .sage-header p {
             font-size: 1.2rem;
-            color: #6b7280;
+            color: var(--text-light);
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto;
         }
-        
-        .sage-chips {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+
+        .sage-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             margin-bottom: 50px;
-            flex-wrap: wrap;
         }
-        
-        .chip {
+
+        .sage-chip {
             background: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #1a2744;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
         }
-        
+
+        .sage-chip:hover {
+            transform: translateY(-5px);
+        }
+
+        .sage-chip h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
         .sage-embed {
             max-width: 800px;
             margin: 0 auto;
-            border-radius: 15px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
-        
+
         /* Services Section */
         .services {
             padding: 100px 0;
             background: white;
         }
-        
-        .section-title {
+
+        .section-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 70px;
         }
-        
-        .section-title h2 {
-            font-family: 'Cormorant', serif;
-            font-size: 3rem;
-            color: #1a2744;
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
-        
-        .section-title p {
+
+        .section-header p {
             font-size: 1.2rem;
-            color: #6b7280;
-            max-width: 600px;
-            margin: 0 auto;
+            color: var(--text-light);
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
         }
-        
+
         .service-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-        
+
         .service-image {
             height: 250px;
             background-size: cover;
             background-position: center;
         }
-        
+
         .service-content {
             padding: 30px;
         }
-        
+
         .service-content h3 {
-            font-family: 'Cormorant', serif;
             font-size: 1.5rem;
-            color: #1a2744;
+            color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         .service-content p {
-            color: #6b7280;
+            color: var(--text-light);
             line-height: 1.6;
         }
-        
+
         /* Reviews Section */
         .reviews {
             padding: 100px 0;
-            background: linear-gradient(135deg, #1a2744 0%, #2d4366 100%);
-            color: white;
+            background: var(--soft-gold);
         }
-        
+
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-        
+
         .review-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            text-align: center;
         }
-        
+
         .stars {
-            color: #fbbf24;
-            font-size: 20px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
             margin-bottom: 20px;
         }
-        
+
         .review-text {
             font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            line-height: 1.7;
         }
-        
-        .reviewer-name {
+
+        .reviewer {
             font-weight: 600;
-            opacity: 0.9;
+            color: var(--primary-color);
         }
-        
+
         /* Team Section */
         .team {
             padding: 100px 0;
             background: white;
         }
-        
+
         .team-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
-        
+
         .team-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .team-image img {
             width: 100%;
             height: 500px;
+            background: var(--soft-gold);
+            border-radius: 20px;
             object-fit: contain;
-            background: #f5f2ee;
         }
-        
-        .team-info h2 {
-            font-family: 'Cormorant', serif;
+
+        .team-text h2 {
             font-size: 2.5rem;
-            color: #1a2744;
+            color: var(--primary-color);
             margin-bottom: 30px;
         }
-        
-        .team-info p {
+
+        .team-text p {
             font-size: 1.1rem;
-            color: #6b7280;
-            line-height: 1.8;
+            color: var(--text-light);
             margin-bottom: 20px;
+            line-height: 1.7;
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, #1a2744 0%, #2d4366 100%);
+            background: linear-gradient(135deg, var(--primary-color), #2a3f5f);
             color: white;
             text-align: center;
         }
-        
+
         .cta-section h2 {
-            font-family: 'Cormorant', serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
         }
-        
+
         .cta-section p {
             font-size: 1.2rem;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-        
+
         /* Footer */
-        .footer {
-            padding: 60px 0 30px;
-            background: #0f1419;
+        footer {
+            background: var(--primary-color);
             color: white;
+            padding: 60px 0 30px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-section h3 {
-            font-family: 'Cormorant', serif;
-            font-size: 1.5rem;
             margin-bottom: 20px;
+            font-size: 1.3rem;
         }
-        
+
         .footer-section p, .footer-section a {
-            color: #9ca3af;
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             margin-bottom: 10px;
             display: block;
         }
-        
+
         .footer-section a:hover {
-            color: white;
+            color: var(--secondary-color);
         }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: #1a2744;
-        }
-        
+
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
             text-align: center;
-            color: #6b7280;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
         }
-        
-        /* Mobile Responsiveness */
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                padding: 0 15px;
-            }
-            
             .header-right {
                 gap: 15px;
             }
@@ -447,49 +440,58 @@
             .phone {
                 display: none;
             }
-            
-            .hero-content h1 {
+
+            .hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .hero-content p {
+
+            .hero p {
                 font-size: 1.1rem;
             }
-            
-            .hero-ctas {
+
+            .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .trust-badges {
                 flex-direction: column;
                 gap: 20px;
             }
-            
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
-            
+
             .team-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 40px;
             }
-            
-            .section-title h2, .sage-intro h2 {
-                font-size: 2.5rem;
+
+            .team-text h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <a href="#" class="logo">Afterglow Medical Spa</a>
-            <div class="header-right">
-                <a href="tel:(512) 419-7546" class="phone">(512) 419-7546</a>
-                <a href="#" class="btn-primary">Book Now</a>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Afterglow Medical Spa</div>
+                <div class="header-right">
+                    <a href="tel:(512) 419-7546" class="phone">(512) 419-7546</a>
+                    <a href="#book" class="btn-primary">Book Now</a>
+                </div>
             </div>
         </div>
     </header>
@@ -498,24 +500,24 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Radiant Skin,<br>Renewed Confidence</h1>
-                <p>Experience premium aesthetic treatments with personalized care in the heart of Austin. Your journey to luminous skin starts here.</p>
-                <div class="hero-ctas">
-                    <a href="#" class="btn-primary">Book Consultation</a>
-                    <a href="#services" class="btn-secondary">View Services</a>
+                <h1>Reveal Your Natural Radiance</h1>
+                <p>Expert aesthetic treatments and personalized skincare solutions in the heart of Austin</p>
+                <div class="hero-buttons">
+                    <a href="#sage" class="btn-primary">Start Your Journey</a>
+                    <a href="#services" class="btn-secondary">View Treatments</a>
                 </div>
                 <div class="trust-badges">
-                    <div class="trust-badge">
-                        <div class="trust-badge-icon">✨</div>
-                        <div>Premium Care</div>
+                    <div class="badge">
+                        <div class="badge-icon"></div>
+                        <span>Licensed Professionals</span>
                     </div>
-                    <div class="trust-badge">
-                        <div class="trust-badge-icon">🏆</div>
-                        <div>Expert Team</div>
+                    <div class="badge">
+                        <div class="badge-icon"></div>
+                        <span>FDA Approved Treatments</span>
                     </div>
-                    <div class="trust-badge">
-                        <div class="trust-badge-icon">💎</div>
-                        <div>Luxury Experience</div>
+                    <div class="badge">
+                        <div class="badge-icon"></div>
+                        <span>Personalized Care</span>
                     </div>
                 </div>
             </div>
@@ -523,72 +525,80 @@
     </section>
 
     <!-- Sage AI Section -->
-    <section class="sage-section">
+    <section id="sage" class="sage-section">
         <div class="container">
-            <div class="sage-intro">
-                <h2>Meet Sage, Your AI Skincare Consultant</h2>
-                <p>Get instant expert guidance on treatments, pricing, and personalized skincare recommendations. Available 24/7 to help you make the best decisions for your skin.</p>
-                <div class="sage-chips">
-                    <span class="chip">📸 Photo Consultation</span>
-                    <span class="chip">⏰ 24/7 Available</span>
-                    <span class="chip">💡 Treatment Guidance</span>
-                    <span class="chip">💰 Instant Pricing</span>
+            <div class="sage-header">
+                <h2>Meet Sage, Your AI Aesthetic Consultant</h2>
+                <p>Get instant treatment recommendations, pricing, and expert guidance 24/7</p>
+            </div>
+            <div class="sage-features">
+                <div class="sage-chip">
+                    <h4>📸 Photo Consultation</h4>
+                    <p>Upload photos for personalized treatment analysis</p>
+                </div>
+                <div class="sage-chip">
+                    <h4>🕐 24/7 Available</h4>
+                    <p>Get answers to your questions anytime</p>
+                </div>
+                <div class="sage-chip">
+                    <h4>💡 Treatment Guidance</h4>
+                    <p>Expert recommendations tailored to your goals</p>
                 </div>
             </div>
             <div class="sage-embed">
-                <iframe src="https://paymegpt.com/agents/240/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+                <iframe src="https://paymegpt.com/agents/246/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Premium Aesthetic Services</h2>
-                <p>Discover our comprehensive range of advanced treatments designed to enhance your natural beauty and boost your confidence.</p>
+            <div class="section-header">
+                <h2>Premium Aesthetic Treatments</h2>
+                <p>Advanced procedures delivered with precision and care</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&h=500&fit=crop&auto=format');"></div>
                     <div class="service-content">
                         <h3>Dermal Fillers</h3>
-                        <p>Restore volume and smooth fine lines with our premium filler treatments. Achieve natural-looking results with minimal downtime.</p>
+                        <p>Restore volume and smooth fine lines with premium hyaluronic acid fillers for natural-looking results that enhance your features.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=500&fit=crop&auto=format');"></div>
                     <div class="service-content">
                         <h3>IPL Photofacial</h3>
-                        <p>Advanced light therapy to improve skin tone, reduce sun damage, and achieve a more even complexion with lasting results.</p>
+                        <p>Advanced Intense Pulsed Light therapy to reduce sun damage, age spots, and improve overall skin tone and texture.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=500&fit=crop&auto=format');"></div>
                     <div class="service-content">
-                        <h3>RF Skin Tightening</h3>
-                        <p>Non-invasive radiofrequency technology to tighten skin, boost collagen production, and create a more youthful appearance.</p>
+                        <h3>Radiofrequency Treatments</h3>
+                        <p>Non-invasive skin tightening technology that stimulates collagen production for firmer, more youthful-looking skin.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=500&fit=crop&auto=format');"></div>
                     <div class="service-content">
-                        <h3>Advanced Facials</h3>
-                        <p>Customized facial treatments targeting specific skin concerns with medical-grade products and expert techniques.</p>
+                        <h3>Medical Facials</h3>
+                        <p>Customized clinical-grade facials targeting specific skin concerns with professional-strength ingredients and techniques.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=500&fit=crop&auto=format');"></div>
                     <div class="service-content">
                         <h3>Acne Treatment</h3>
-                        <p>Comprehensive acne solutions combining professional treatments with personalized skincare regimens for clear, healthy skin.</p>
+                        <p>Comprehensive acne management programs combining advanced treatments and medical-grade skincare for clear, healthy skin.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=500&fit=crop&auto=format')"></div>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1596178060810-4d3ce8b6cb3d?w=800&h=500&fit=crop&auto=format');"></div>
                     <div class="service-content">
-                        <h3>Skin Consultation</h3>
-                        <p>Thorough skin analysis and personalized treatment planning to help you achieve your aesthetic goals safely and effectively.</p>
+                        <h3>Skin Rejuvenation</h3>
+                        <p>Multi-modal approach to skin renewal incorporating the latest technologies for comprehensive anti-aging results.</p>
                     </div>
                 </div>
             </div>
@@ -598,25 +608,25 @@
     <!-- Reviews Section -->
     <section class="reviews">
         <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>Real results and genuine experiences from our valued clients</p>
+            <div class="section-header">
+                <h2>Client Experiences</h2>
+                <p>Hear from our satisfied clients about their transformation journeys</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="stars">★★★★★</div>
                     <p class="review-text">"I absolutely love coming here and have been coming for years now. Janelle is not only incredibly skilled at what she does, but she also makes the whole experience relaxing. She knows exactly how to make you feel comfortable and thoroughly explains each step of the service."</p>
-                    <p class="reviewer-name">Sarah M.</p>
+                    <div class="reviewer">Sarah M.</div>
                 </div>
                 <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="stars">★★★★★</div>
                     <p class="review-text">"I recommend Janelle to anyone seeking acne treatment. I have been getting facials with her for the better part of the year now. She is very attentive to me and my skin, and it has improved so much since my first treatment. She has been so accommodating to my requests."</p>
-                    <p class="reviewer-name">Michael R.</p>
+                    <div class="reviewer">Michael R.</div>
                 </div>
                 <div class="review-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="stars">★★★★★</div>
                     <p class="review-text">"I had an incredible experience with this skincare service! From the moment I walked in, I was welcomed with warmth and professionalism. Janelle took the time to assess my skin, listen to my concerns, and customize a treatment plan that truly worked for me."</p>
-                    <p class="reviewer-name">Jennifer L.</p>
+                    <div class="reviewer">Jessica T.</div>
                 </div>
             </div>
         </div>
@@ -626,63 +636,55 @@
     <section class="team">
         <div class="container">
             <div class="team-content">
-                <div class="team-image">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=500&fit=crop&auto=format" alt="Afterglow Medical Spa Team" style="object-fit:contain; background:#f5f2ee;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=800&fit=crop&auto=format" alt="Afterglow Team" class="team-image">
                 </div>
-                <div class="team-info">
+                <div class="team-text">
                     <h2>Expert Care, Personal Touch</h2>
-                    <p>At Afterglow Medical Spa, we believe that exceptional skincare goes beyond treatments—it's about creating lasting relationships built on trust, expertise, and genuine care.</p>
-                    <p>Our team of skilled professionals combines years of experience with the latest aesthetic technologies to deliver results that exceed expectations. We take pride in our personalized approach, ensuring each client receives treatments tailored to their unique skin needs and aesthetic goals.</p>
-                    <p>Located in the heart of Austin, we're committed to helping you discover your most radiant self in a luxurious, welcoming environment.</p>
+                    <p>At Afterglow Medical Spa, we believe that every client deserves personalized attention and expert care. Our team of licensed professionals combines years of experience with the latest aesthetic technologies to deliver exceptional results.</p>
+                    <p>Led by our skilled practitioners, we take pride in creating customized treatment plans that address your unique skin concerns and aesthetic goals. Our commitment to excellence and client satisfaction has made us Austin's trusted destination for medical spa services.</p>
+                    <p>Experience the difference that expertise, care, and attention to detail can make in your aesthetic journey.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section id="book" class="cta-section">
         <div class="container">
-            <h2>Ready to Glow?</h2>
-            <p>Take the first step towards your most radiant skin. Book your consultation today and discover the Afterglow difference.</p>
-            <a href="#" class="btn-primary">Schedule Your Consultation</a>
+            <h2>Ready to Begin Your Transformation?</h2>
+            <p>Schedule your consultation today and discover the perfect treatment plan for you</p>
+            <a href="tel:(512) 419-7546" class="btn-primary">Book Your Appointment</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Afterglow Medical Spa</h3>
-                    <p>Premium aesthetic treatments in the heart of Austin. Your journey to radiant skin starts here.</p>
-                    <div class="social-links">
-                        <a href="http://instagram.com/afterglowatx" target="_blank">📷</a>
-                    </div>
+                    <p>Your premier destination for aesthetic treatments in Austin, Texas. Enhancing natural beauty with expert care.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
+                    <h3>Contact Information</h3>
                     <a href="tel:(512) 419-7546">(512) 419-7546</a>
                     <a href="mailto:afterglowatx@gmail.com">afterglowatx@gmail.com</a>
-                    <p>Austin, Texas</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <a href="http://instagram.com/afterglowatx" target="_blank">Instagram</a>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="#">Dermal Fillers</a>
-                    <a href="#">IPL Photofacial</a>
-                    <a href="#">RF Skin Tightening</a>
-                    <a href="#">Advanced Facials</a>
-                    <a href="#">Acne Treatment</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#">Book Appointment</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Reviews</a>
-                    <a href="#">Contact</a>
+                    <a href="#services">Dermal Fillers</a>
+                    <a href="#services">IPL Treatments</a>
+                    <a href="#services">RF Skin Tightening</a>
+                    <a href="#services">Medical Facials</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Afterglow Medical Spa. All rights reserved. | Powered by Lumière Systems</p>
+                <p>&copy; 2024 Afterglow Medical Spa. All rights reserved. | Powered by Lumière Systems</p>
             </div>
         </div>
     </footer>
