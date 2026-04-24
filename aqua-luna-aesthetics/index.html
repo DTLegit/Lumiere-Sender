@@ -1,258 +1,653 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Aqua Luna Aesthetics</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--accent:#c4922a;--dark:#0d1117;--text:#1a1a2e;--bg:#faf8f5;--nav:#fff}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Luna Aesthetics | Premium Med Spa in Austin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header{background:var(--nav);padding:0 48px;height:74px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.07)}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{height:44px;object-fit:contain}
-.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
-.hdr-r{display:flex;gap:20px;align-items:center;font-size:14px}
-.hdr-r a{opacity:0.65}.hdr-r a:hover{opacity:1;color:var(--accent)}
-.hdr-cta{background:var(--text);color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:3px;font-weight:500;font-size:13px;letter-spacing:0.3px}
-.hdr-cta:hover{background:#333!important}
+        body {
+            font-family: 'Jost', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
-.hero-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--bg) 0%,#f0e8d8 100%)}
-.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.05;margin-bottom:20px}
-h1 em{font-style:italic;color:var(--accent)}
-.hero-sub{font-size:1rem;opacity:0.65;max-width:480px;line-height:1.9;margin-bottom:32px}
-.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-.btn{padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;text-transform:uppercase}
-.btn-p{background:var(--text);color:#fff}.btn-p:hover{transform:translateY(-2px);opacity:0.9}
-.btn-o{background:transparent;color:var(--text);border:1px solid rgba(26,26,46,0.25)}.btn-o:hover{border-color:var(--accent);color:var(--accent)}
-.trust{display:flex;gap:20px;flex-wrap:wrap}
-.trust span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.4}
-.trust span::before{content:'— ';color:var(--accent);opacity:1}
-.hero-r{position:relative;overflow:hidden}
-.hero-img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,248,245,0.3),transparent)}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.stats-bar{background:var(--dark);color:#fff;padding:20px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
-.stat-item{text-align:center}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
-.stat-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.45;margin-top:4px}
+        /* Header */
+        .header {
+            background: rgba(26, 39, 68, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
 
-.section{padding:100px 48px}
-.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;margin-bottom:16px;line-height:1.15}
-h2 em{font-style:italic;color:var(--accent)}
-.sec-sub{font-size:1rem;opacity:0.65;max-width:600px;line-height:1.9;margin-bottom:48px}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.sage-inner{max-width:960px;margin:0 auto}
-.feats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.feat{padding:10px 18px;border:1px solid rgba(196,146,42,0.3);border-radius:2px;font-size:13px;background:rgba(196,146,42,0.06)}
-.chat-wrap{border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.12)}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: #f5f2ee;
+            text-decoration: none;
+        }
 
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc-card{background:#fff;border-radius:6px;overflow:hidden;transition:all 0.3s;border:1px solid transparent}
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:rgba(196,146,42,0.2)}
-.svc-img{width:100%;height:200px;object-fit:cover;object-position:center center}
-.svc-body{padding:22px}
-.svc-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500}
-.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px}
-.svc-desc{font-size:13px;opacity:0.55;line-height:1.7}
-.svc-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--accent)}
-.svc-link::after{content:' →'}
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-.rev-section{background:var(--dark);color:#fff}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:28px}
-.rev-stars{color:var(--accent);letter-spacing:2px;font-size:14px;margin-bottom:12px}
-.rev-text{font-size:14px;opacity:0.7;line-height:1.8;font-style:italic;margin-bottom:16px}
-.rev-author{font-size:12px;opacity:0.35;letter-spacing:1px;text-transform:uppercase}
+        .phone-link {
+            color: #f5f2ee;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
 
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;max-width:900px}
-.team-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
-.team-photo-wrap{background:#f5f2ee;display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden}
-.team-photo{width:100%;max-height:360px;object-fit:contain;object-position:center center;display:block}
-.team-body{padding:24px}
-.team-role{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:10px}
-.team-bio{font-size:14px;opacity:0.6;line-height:1.8}
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #f4e4a6);
+            color: #1a2744;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-.cta-section{background:var(--accent);color:#fff;text-align:center;padding:80px 48px}
-.cta-section h2{color:#fff;margin-bottom:12px}
-.cta-section p{opacity:0.85;margin-bottom:36px;font-size:1rem}
-.btn-light{background:#fff;color:var(--text);font-weight:600}
-.btn-light:hover{background:#f5f5f5}
-.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)}
-.btn-ghost:hover{background:rgba(255,255,255,0.15)}
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
 
-footer{background:#080d18;color:#e8e4f0;padding:56px 48px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
-.ft-tagline{font-size:13px;opacity:0.4;line-height:1.9;margin-bottom:20px}
-.ft-contact{font-size:13px;opacity:0.4;line-height:2.4}.ft-contact a:hover{color:var(--accent)}
-.ft-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.ft-links{font-size:13px;opacity:0.4;line-height:2.6}.ft-links a:hover{color:var(--accent)}
-.ft-bot{background:#040609;padding:18px 48px;display:flex;justify-content:space-between;font-size:11px;opacity:0.25;letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:8px}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2744 0%, #2c4064 50%, #3a5184 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{display:none}header{padding:0 20px}.section{padding:72px 20px}.stats-bar{padding:20px}.cta-section{padding:60px 20px}footer{grid-template-columns:1fr;padding:40px 20px}.ft-bot{flex-direction:column;text-align:center;padding:16px 20px}}
-@media(max-width:640px){.svc-grid{grid-template-columns:1fr}.hero-l{padding:60px 20px}.btns{flex-direction:column}}
-</style>
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800') center/cover;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 500;
+            color: #f5f2ee;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 .italic {
+            font-style: italic;
+            color: #d4af37;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: #b8c5d6;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #f5f2ee;
+            border: 2px solid #d4af37;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: #1a2744;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .badge {
+            color: #b8c5d6;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge::before {
+            content: '✓';
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* Sage AI Section */
+        .sage-section {
+            padding: 80px 0;
+            background: #f8f6f3;
+        }
+
+        .sage-content {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sage-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1a2744;
+            margin-bottom: 20px;
+        }
+
+        .sage-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .feature-chips {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .chip {
+            background: #1a2744;
+            color: #f5f2ee;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .sage-widget {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(26, 39, 68, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1a2744;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(26, 39, 68, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a2744;
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .service-price {
+            color: #d4af37;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background: #f8f6f3;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(26, 39, 68, 0.08);
+        }
+
+        .stars {
+            color: #d4af37;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .reviewer {
+            font-weight: 600;
+            color: #1a2744;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a2744, #2c4064);
+            padding: 80px 0;
+            text-align: center;
+            color: #f5f2ee;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: #b8c5d6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a2744;
+            color: #b8c5d6;
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #f5f2ee;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #b8c5d6;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #d4af37;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            background: #2c4064;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #d4af37;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2c4064;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-right {
+                gap: 15px;
+            }
+
+            .phone-link {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .trust-badges {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-chips {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Aqua Luna Aesthetics</a>
+            <div class="header-right">
+                <a href="tel:(512) 518-1876" class="phone-link">(512) 518-1876</a>
+                <a href="#sage-ai" class="btn-primary">Book Now</a>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <div class="brand">
-    
-    <span class="brand-name">Aqua Luna Aesthetics</span>
-  </div>
-  <div class="hdr-r">
-    <a href="tel:5125181876">(512) 518-1876</a>
-    <a href="#sage">Meet Sage</a>
-    <a href="tel:5125181876" target="_blank" class="hdr-cta">Book Now</a>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Luxury <em class="italic">Wellness</em><br>Redefined in Austin</h1>
+                    <p>Experience transformative beauty treatments with Ashley Byler's expert touch. Deluxe facials, advanced treatments, and premium skincare in the heart of Austin.</p>
+                    <div class="hero-buttons">
+                        <a href="#sage-ai" class="btn-primary">Book Consultation</a>
+                        <a href="#services" class="btn-secondary">View Services</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="badge">Licensed Aesthetician</div>
+                        <div class="badge">Premium Products</div>
+                        <div class="badge">Austin's Premier Spa</div>
+                    </div>
+                </div>
+                <div class="hero-image"></div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-l">
-    <div class="eyebrow">Premier Med Spa · Aesthetic Excellence</div>
-    <h1>Look Your<br>Most <em>Radiant</em><br>Self</h1>
-    <p class="hero-sub">Expert aesthetic treatments personalized to you. Natural-looking results.</p>
-    <div class="btns">
-      <a href="tel:5125181876" target="_blank" class="btn btn-p">Book Consultation</a>
-      <a href="#sage" class="btn btn-o">Chat with Sage →</a>
-    </div>
-    <div class="trust">
-      <span>Board Certified</span>
-      <span>Natural Results</span>
-      <span>Free Consults</span>
-      <span>(512) 518-1876</span>
-    </div>
-  </div>
-  <div class="hero-r">
-    <img class="hero-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&auto=format" alt="Aqua Luna Aesthetics" onerror="this.style.background='#f0e8d8'">
-    <div class="hero-overlay"></div>
-  </div>
-</section>
+    <!-- Sage AI Section -->
+    <section class="sage-section" id="sage-ai">
+        <div class="container">
+            <div class="sage-content">
+                <h2>Book with Sage AI Assistant</h2>
+                <p>Get instant answers and schedule your perfect treatment with our intelligent booking assistant</p>
+                <div class="feature-chips">
+                    <div class="chip">Instant Scheduling</div>
+                    <div class="chip">Treatment Recommendations</div>
+                    <div class="chip">Pricing Information</div>
+                    <div class="chip">Skincare Advice</div>
+                </div>
+            </div>
+            <div class="sage-widget">
+                <iframe src="https://paymegpt.com/agents/255/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
+            </div>
+        </div>
+    </section>
 
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-label">More Bookings</div></div>
-  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
-  <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Client Rated</div></div>
-  <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Consultations</div></div>
-</div>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Signature Treatments</h2>
+                <p>Curated wellness experiences designed to rejuvenate your skin and spirit</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500')"></div>
+                    <div class="service-content">
+                        <h3>Dermaplaning</h3>
+                        <p>Gentle exfoliation treatment that removes dead skin cells and fine facial hair for a smoother, brighter complexion.</p>
+                        <div class="service-price">Starting at $85</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500')"></div>
+                    <div class="service-content">
+                        <h3>Signature Facial</h3>
+                        <p>Customized deluxe facial treatment tailored to your skin's unique needs for optimal hydration and radiance.</p>
+                        <div class="service-price">Starting at $120</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500')"></div>
+                    <div class="service-content">
+                        <h3>HydraFacial</h3>
+                        <p>Advanced multi-step treatment that cleanses, extracts, and hydrates skin for an instant glow.</p>
+                        <div class="service-price">Starting at $150</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500')"></div>
+                    <div class="service-content">
+                        <h3>Chemical Peel</h3>
+                        <p>Professional-grade peels to improve skin texture, reduce fine lines, and enhance overall skin tone.</p>
+                        <div class="service-price">Starting at $100</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500')"></div>
+                    <div class="service-content">
+                        <h3>Body Treatments</h3>
+                        <p>Luxurious full-body treatments designed to nourish, exfoliate, and rejuvenate your skin from head to toe.</p>
+                        <div class="service-price">Starting at $95</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500')"></div>
+                    <div class="service-content">
+                        <h3>Skincare Consultation</h3>
+                        <p>Personalized skincare analysis and product recommendations to create your perfect at-home routine.</p>
+                        <div class="service-price">Starting at $50</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="sage" style="background:var(--bg)">
-  <div class="sage-inner">
-    <div class="sec-label">Available 24/7</div>
-    <h2>Meet Sage —<br><em>Your Aesthetic Guide</em></h2>
-    <p class="sec-sub">Not sure which treatment is right for you? Sage knows every service, every price, and every option at Aqua Luna Aesthetics. Upload a photo for personalized talking points before your consultation — no pressure, just helpful.</p>
-    <div class="feats">
-      <div class="feat">📸 Photo Analysis</div>
-      <div class="feat">💬 Treatment Guidance</div>
-      <div class="feat">📅 Book Consultation</div>
-      <div class="feat">💊 Ask About Pricing</div>
-      <div class="feat">🌙 Always Available</div>
-    </div>
-    <div class="chat-wrap">
-      <iframe src="https://paymegpt.com/agents/249/embed" frameborder="0" style="width:100%;height:640px;border:none;display:block;"></iframe>
-      <script src="https://paymegpt.com/iframe-auto-resize.js"></script>
-    </div>
-  </div>
-</section>
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from our valued Austin community</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"Ashley is absolutely amazing! The dermaplaning treatment left my skin feeling incredible smooth and glowing. The atmosphere is so relaxing and professional. I've found my new go-to spa in Austin!"</div>
+                    <div class="reviewer">- Sarah M.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"I've been to many spas around Austin, but Aqua Luna is on another level. The deluxe facial was pure luxury and my skin has never looked better. Ashley really knows what she's doing!"</div>
+                    <div class="reviewer">- Maria L.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"From the moment I walked in, I felt pampered. The treatments are top-notch and the results speak for themselves. I can't recommend Aqua Luna enough - it's my monthly self-care ritual now!"</div>
+                    <div class="reviewer">- Jennifer K.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section services-sec" style="background:#fff">
-  <div class="sec-label">Treatments</div>
-  <h2>Our <em>Services</em></h2>
-  <div class="svc-grid">
-    
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format" alt="RF" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">RF</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-    <div class="svc-card">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=400&fit=crop&auto=format" alt="Dermaplaning" loading="lazy" onerror="this.style.background='#f0e8d8'">
-      <div class="svc-body">
-        <div class="svc-tag">Treatment</div>
-        <div class="svc-name">Dermaplaning</div>
-        <div class="svc-desc">Safe, effective, and tailored to your unique goals. Ask Sage for details and current pricing.</div>
-        <a href="#sage" class="svc-link">Ask Sage</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Skin?</h2>
+            <p>Book your personalized consultation today and discover the Aqua Luna difference</p>
+            <a href="#sage-ai" class="btn-primary">Schedule Now</a>
+        </div>
+    </section>
 
-<section class="section rev-section">
-  <div class="sec-label" style="color:var(--accent)">Client Reviews</div>
-  <h2 style="color:#fff">What Our <em>Clients Say</em></h2>
-  <div class="rev-grid">
-    
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">"Went in for a deep pore facial and some dermaplaning and I was blown away by Ashley! She was SO knowledgable and gave me a lot of great tips for helping my skin. I've been struggling with hormonal acne for a long time and she had such great insight on helping me get rid of it! My"</div>
-      <div class="rev-author">Amanda Bounds · Google</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">"Ashley is the greatest! I went to her for my first facial and she left my skin looking better than it has in years. She's a wealth of knowledge - she examined me and gave me special insight and care suggestions for my particular skin type, and talked through every step in the fac"</div>
-      <div class="rev-author">Angel Edwards · Google</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">"I went to Aqua Luna Aesthetics today for a DMK facial with Ashley, and the service was as great as the Yelp reviews promised.
-Ashley is both warm and professional. Before she started the facial, she made sure to understand my current skin routine, going so far as to look up the i"</div>
-      <div class="rev-author">Shelly Roark · Google</div>
-    </div>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aqua Luna Aesthetics</h3>
+                    <p>Austin's premier destination for luxury wellness and aesthetic treatments.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <a href="tel:(512) 518-1876">(512) 518-1876</a>
+                    <a href="mailto:aqualunaatx@gmail.com">aqualunaatx@gmail.com</a>
+                    <p>Austin, Texas</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/aqualunaatx/" target="_blank">IG</a>
+                        <a href="https://www.facebook.com/AquaLunaATX/" target="_blank">FB</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aqua Luna Aesthetics. All rights reserved. | Powered by Lumière Systems</p>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-
-<section class="cta-section">
-  <h2>Ready to Look Your Best?</h2>
-  <p>Chat with Sage for instant guidance or call us to schedule your free consultation.</p>
-  <div class="btns" style="justify-content:center">
-    <a href="#sage" class="btn btn-light">Talk to Sage</a>
-    <a href="tel:5125181876" class="btn btn-ghost">Call (512) 518-1876</a>
-    <a href="tel:5125181876" target="_blank" class="btn btn-ghost">Book Now</a>
-  </div>
-</section>
-
-<footer>
-  <div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(255,255,255,0.6);margin-bottom:16px">Aqua Luna Aesthetics</div>
-    <p class="ft-tagline">Personalized aesthetic treatments delivered by licensed professionals. Natural-looking results, expert care.</p>
-    <div class="ft-contact">
-      469 custom-background et_button_no_icon et_pb_button_helpe<br>
-      
-      <a href="tel:5125181876">(512) 518-1876</a><br>
-      <a href="mailto:aqualunaatx@gmail.com">aqualunaatx@gmail.com</a><br>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Treatments</div>
-    <div class="ft-links">
-      <a href="#sage">RF</a><a href="#sage">Dermaplaning</a>
-    </div>
-  </div>
-  <div>
-    <div class="ft-title">Connect</div>
-    <div class="ft-contact">
-      <a href="https://www.instagram.com/aqualunaatx/" target="_blank">Instagram →</a><br>
-      <a href="https://www.facebook.com/AquaLunaATX/" target="_blank">Facebook →</a><br>
-      
-    </div>
-  </div>
-</footer>
-<div class="ft-bot">
-  <span>© Aqua Luna Aesthetics</span>
-  <span>Powered by Lumière Systems</span>
-</div>
-
+        // Header background opacity on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 39, 68, 0.98)';
+            } else {
+                header.style.background = 'rgba(26, 39, 68, 0.95)';
+            }
+        });
+    </script>
 </body>
 </html>
